@@ -158,10 +158,10 @@ export default function AddCustomerPage() {
       let additionalUrls = [];
 
       if (profilePic) {
-        profileUrl = await uploadToCloudinary(profilePic, "mkl-admin/profiles");
+        profileUrl = await uploadToCloudinary(profilePic, "ak-admin/profiles");
       }
       if (extraPics.length > 0) {
-        additionalUrls = await uploadMultiple(extraPics, "mkl-admin/additional");
+        additionalUrls = await uploadMultiple(extraPics, "ak-admin/additional");
       }
       setUploading(false);
 
@@ -258,7 +258,7 @@ export default function AddCustomerPage() {
     <div className="max-w-3xl mx-auto">
       <PageHeader
         title="Add New Customer"
-        subtitle="Register a new water purifier customer"
+        subtitle="Register a Customer"
       />
 
       <form onSubmit={handleSubmit} className="space-y-5">

@@ -5,10 +5,10 @@ import { fetchSettings } from '@/services/settings'
 // ─────────────────────────────────────────────────────────────
 
 const DEFAULTS = {
-  company_name:    'MKL Enterprises',
+  company_name:    'AK Enterprises',
   company_tagline: 'Sales & Service',
-  company_phone:   '8179019929',
-  company_address: 'D, 58-1-319, NAD Kotha Rd, opp. Bank of India, Nad Junction, Visakhapatnam, AP 530027',
+  company_phone:   '9999999999',
+  company_address: 'Visakhapatnam, Andhra Pradesh',
   company_email:   ''
 }
 

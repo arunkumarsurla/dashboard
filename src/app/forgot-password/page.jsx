@@ -90,7 +90,7 @@ export default function ForgotPasswordPage() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="admin@mkl.com"
+                    placeholder="admin@ak.com"
                     className="w-full pl-14 pr-4 py-3 rounded-xl border border-gray-200
                       focus:border-blue-500 focus:ring-2 focus:ring-blue-200
                       outline-none transition-all text-sm"
@@ -121,7 +121,7 @@ export default function ForgotPasswordPage() {
         )}
 
         <p className="mt-5 text-center text-xs text-slate-400">
-          Single-admin system · MKL Enterprises
+          Single-admin system · AK Enterprises
         </p>
       </div>
     </div>

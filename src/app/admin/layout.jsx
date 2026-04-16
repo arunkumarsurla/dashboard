@@ -19,7 +19,7 @@ import {
   Calendar,
   Settings,
   History,
-  FileClock
+  FileClock,
 } from "lucide-react";
 import ConfirmModal from "@/components/modals/ConfirmModal";
 import { removeToken, getToken } from "@/utils/auth";
@@ -124,7 +124,7 @@ export default function AdminLayout({ children }) {
             <Link href="/admin" className="flex items-center gap-2.5 group">
               <div>
                 <Image
-                  src="/mkl_logo.jpeg"
+                  src="/ak_logo_white.png"
                   width={70}
                   height={0}
                   style={{ height: "auto" }}
@@ -181,7 +181,7 @@ export default function AdminLayout({ children }) {
               <div className="flex items-center gap-2.5">
                 <div>
                   <Image
-                    src="/mkl_logo.jpeg"
+                    src="/ak_logo_white.png"
                     width={30}
                     height={30}
                     alt="logo"
@@ -189,7 +189,7 @@ export default function AdminLayout({ children }) {
                 </div>
                 <div>
                   <p className="text-white font-black text-sm leading-none">
-                    MKL Admin
+                    AK Admin
                   </p>
                 </div>
               </div>
@@ -237,7 +237,7 @@ export default function AdminLayout({ children }) {
             </button>
             <div>
               <h1 className="font-extrabold text-slate-800 text-base leading-none">
-                MKL Water Purifier Admin
+                AK Admin
               </h1>
               <p className="text-xs text-slate-400 mt-0.5 hidden sm:block">
                 {pageLabel}

@@ -15,8 +15,8 @@ export const MONTHS = [
 ]
 
 export const COMPANY = {
-  name:    'MKL ENTERPRISES',
+  name:    'AK Enterprises',
   tagline: 'Sales & Service',
-  address: 'D, 58-1-319, NAD Kotha Rd, opp. Bank of India, Nad Junction, Visakhapatnam, AP 530027',
-  phone:   '8179019929',
+  address: 'Vizag',
+  phone:   '9999999999',
 }

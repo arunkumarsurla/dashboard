@@ -5,7 +5,7 @@ const UPLOAD_PRESET = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET
  * Upload a base64 or File object to Cloudinary via unsigned upload preset.
  * Returns the secure URL string.
  */
-export async function uploadToCloudinary(file, folder = 'mkl-admin') {
+export async function uploadToCloudinary(file, folder = 'ak-admin') {
   const formData = new FormData()
 
   if (typeof file === 'string' && file.startsWith('data:')) {
@@ -35,7 +35,7 @@ export async function uploadToCloudinary(file, folder = 'mkl-admin') {
 /**
  * Upload multiple images (base64 or File), return array of URLs.
  */
-export async function uploadMultiple(files, folder = 'mkl-admin') {
+export async function uploadMultiple(files, folder = 'ak-admin') {
   const results = await Promise.allSettled(
     files.map(f => uploadToCloudinary(f, folder))
   )

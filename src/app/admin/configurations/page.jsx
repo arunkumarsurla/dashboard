@@ -265,7 +265,7 @@ const SETTING_FIELDS = [
   {
     key: "company_name",
     label: "Company Name",
-    placeholder: "e.g. MKL Enterprises",
+    placeholder: "e.g. AK Enterprises",
     span: 1,
   },
   {
@@ -583,7 +583,7 @@ export default function ConfigurationsPage() {
 
         <ConfigSection
           title="Brands"
-          description="Water purifier brands"
+          description="Brands"
           icon={Package}
           iconBg="bg-gradient-to-br from-violet-600 to-violet-700"
           items={brands}

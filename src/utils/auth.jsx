@@ -1,8 +1,8 @@
 'use client'
 
-const TOKEN_KEY  = 'mkl_token'
-const USER_KEY   = 'mkl_user'
-const EXPIRY_KEY = 'mkl_expiry'
+const TOKEN_KEY  = 'ak_token'
+const USER_KEY   = 'ak_user'
+const EXPIRY_KEY = 'ak_expiry'
 
 const EXPIRY_DAYS = 7
 const EXPIRY_MS   = EXPIRY_DAYS * 24 * 60 * 60 * 1000

@@ -560,7 +560,7 @@ function AddServiceModal({ customer, onClose, onSaved }) {
       if (form.imagePreviews.length > 0)
         imageUrls = await uploadMultiple(
           form.imagePreviews,
-          "mkl-admin/services",
+          "ak-admin/services",
         );
 
       const record = await createServiceRecord({
