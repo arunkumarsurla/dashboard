@@ -98,13 +98,12 @@ export async function generateServiceInvoice({ customer, serviceDate, savedData 
   buildHeader(doc, 'SERVICE RECEIPT', company)
 
   doc.setFontSize(9); doc.setFont(undefined, 'normal')
-  const [y, m, d] = (serviceDate || now.toISOString().slice(0, 10)).split('-')
   const receiptTime = formatDateTime(now)
-  const serviceDateTime = serviceDate ? formatDateTime(new Date(serviceDate)) : formatDateTime(now)
   
   doc.text(`Receipt ID: #${Date.now().toString().slice(-6)}`, 20, 78)
   doc.text(`Generated: ${receiptTime}`, pw - 20, 78, { align: 'right' })
 
+  // ── Customer Details ─────────────────────────────────────
   doc.setFontSize(11); doc.setFont(undefined, 'bold'); doc.text('CUSTOMER DETAILS:', 20, 93)
   doc.setFontSize(9); doc.setFont(undefined, 'normal')
   doc.text(`Name: ${customer.name}`, 20, 103)
@@ -115,6 +114,7 @@ export async function generateServiceInvoice({ customer, serviceDate, savedData 
   addrLines.forEach(l => { doc.text(l, 20, yp); yp += 7 })
   yp += 8
 
+  // ── Service Details ──────────────────────────────────────
   doc.setFontSize(11); doc.setFont(undefined, 'bold'); doc.text('SERVICE DETAILS:', 20, yp)
   doc.setFontSize(9); doc.setFont(undefined, 'normal')
   doc.text(`Purifier Brand: ${customer.brand}`, 20, yp + 10)
@@ -123,11 +123,33 @@ export async function generateServiceInvoice({ customer, serviceDate, savedData 
   const sd = new Date(serviceDate || now)
   const ed = new Date(serviceDate || now)
   ed.setMonth(ed.getMonth() + parseInt(savedData.reminderMonths || customer.service || 0))
-  
+
   doc.text(`Start Date & Time: ${formatDateTime(sd)}`, 20, yp + 26)
   doc.text(`End Date: ${formatDateTime(ed, false)}`, 20, yp + 34)
   yp += 48
 
+  // ── Spare Parts ──────────────────────────────────────────
+  const usedParts = Object.entries(savedData.spareParts || {})
+    .filter(([, v]) => v)
+    .map(([k]) => k)
+
+  doc.setFontSize(11); doc.setFont(undefined, 'bold')
+  doc.text('SPARE PARTS REPLACED:', 20, yp)
+  yp += 8
+  doc.setFontSize(9); doc.setFont(undefined, 'normal')
+
+  if (usedParts.length > 0) {
+    usedParts.forEach((part, idx) => {
+      doc.text(`  ${idx + 1}. ${part}`, 25, yp)
+      yp += 7
+    })
+  } else {
+    doc.text('  No parts replaced this visit', 25, yp)
+    yp += 7
+  }
+  yp += 6
+
+  // ── Payment Details ──────────────────────────────────────
   doc.setFillColor(240, 240, 240); doc.rect(20, yp, pw - 40, 24, 'F')
   doc.setFontSize(10); doc.setFont(undefined, 'bold')
   doc.text('PAYMENT DETAILS:', 25, yp + 10)
