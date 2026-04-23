@@ -114,6 +114,8 @@ function ServiceRecordModal({ record, onClose }) {
           reminderMonths: record.reminder_months,
           totalBill:      record.total_bill,
           paymentMode:    record.payment_mode,
+          spareParts: record.spare_parts, 
+
         },
       });
     } finally {
