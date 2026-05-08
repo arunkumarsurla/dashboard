@@ -199,8 +199,8 @@ export default function LoginPage() {
           </p>
           <div className="flex items-center justify-between">
             <div className="text-xs text-slate-500 space-y-0.5">
-              <p>📧 admin@gmail.com</p>
-              <p>🔑 admin@123</p>
+              <p>📧 admin@gmail.com </p>
+              <p>🔑 admin@123 </p>
             </div>
             <button
               type="button"
