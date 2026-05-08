@@ -12,14 +12,16 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showPass, setShowPass] = useState(false);
+  const [showDemo, setShowDemo] = useState(false);
+
 
   useEffect(() => {
     if (getToken()) router.replace("/admin");
   }, [router]);
 
   const fillDemo = () => {
-    setCreds({ email: "admin@gmail.com", password: "admin@123" });
-  };
+  setCreds({ email: "admin@gmail.com", password: "admin@123" });
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -91,7 +93,7 @@ export default function LoginPage() {
       <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md relative z-10 animate-fadeIn">
         <div className="text-center mb-7">
           <div
-            className="inline-flex items-center justify-center"
+            className="inline-flex items-center justify-center "
             style={{ background: "#1e3a8a" }}
           >
             <Image
@@ -100,6 +102,7 @@ export default function LoginPage() {
               height={100}
               alt="logo"
             />
+            {/* <Droplets size={30} className="text-white"/> */}
           </div>
           <h1 className="text-3xl font-black text-slate-800 tracking-tight">
             AK Admin
@@ -123,7 +126,10 @@ export default function LoginPage() {
             </label>
 
             <div className="relative group">
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 bg-blue-50 p-1.5 rounded-lg">
+              <div
+                className="absolute left-3 top-1/2 -translate-y-1/2 
+                bg-blue-50 p-1.5 rounded-lg"
+              >
                 <Mail size={16} className="text-blue-600" />
               </div>
 
@@ -147,7 +153,10 @@ export default function LoginPage() {
             </label>
 
             <div className="relative group">
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 bg-blue-50 p-1.5 rounded-lg">
+              <div
+                className="absolute left-3 top-1/2 -translate-y-1/2 
+                bg-blue-50 p-1.5 rounded-lg"
+              >
                 <Lock size={16} className="text-blue-600" />
               </div>
 
@@ -191,27 +200,6 @@ export default function LoginPage() {
             {loading ? "Signing in…" : "Sign In to Dashboard"}
           </button>
         </form>
-
-        {/* Demo Credentials */}
-        <div className="mt-4 p-3 bg-blue-50 border border-blue-100 rounded-xl">
-          <p className="text-xs text-blue-600 font-semibold mb-1">
-            Demo Credentials
-          </p>
-          <div className="flex items-center justify-between">
-            <div className="text-xs text-slate-500 space-y-0.5">
-              <p>📧 admin@gmail.com</p>
-              <p>🔑 admin@123</p>
-            </div>
-            <button
-              type="button"
-              onClick={fillDemo}
-              className="text-xs bg-blue-600 text-white px-3 py-1.5 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-            >
-              Use Demo
-            </button>
-          </div>
-        </div>
-
         <div className="mt-4 text-center">
           <button
             onClick={() => router.push("/forgot-password")}
@@ -220,6 +208,22 @@ export default function LoginPage() {
             Forgot your password?
           </button>
         </div>
+        <div className="mt-4 p-3 bg-blue-50 border border-blue-100 rounded-xl">
+  <p className="text-xs text-blue-600 font-semibold mb-1">Demo Credentials</p>
+  <div className="flex items-center justify-between">
+    <div className="text-xs text-slate-500 space-y-0.5">
+      <p>📧 admin@gmail.com</p>
+      <p>🔑 admin@123</p>
+    </div>
+    <button
+      type="button"
+      onClick={fillDemo}
+      className="text-xs bg-blue-600 text-white px-3 py-1.5 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+    >
+      Use Demo
+    </button>
+  </div>
+</div>
 
         <p className="mt-5 text-center text-xs text-slate-400">
           Single-admin system · AK Enterprises
