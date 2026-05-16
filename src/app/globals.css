@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
+/* ── Design tokens ─────────────────────────────────────────────────── */
 :root {
-  --primary:       #1e3a8a;
-  --primary-light: #1e3a8a;
-  --primary-dark:  #1e3a8a;
+  --primary:        #1e3a8a;
+  --primary-light:  #2563eb;
+  --primary-dark:   #0a1628;
+  --primary-glow:   rgba(30, 58, 138, 0.15);
+  --accent:         #60a5fa;
+  --surface:        #f1f5f9;
+  --surface-card:   #ffffff;
+  --text-base:      #1e293b;
+  --text-muted:     #64748b;
+  --border:         #dbeafe;
 }
 
+/* ── Base ──────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: #f1f5f9;
-  color: #1e293b;
+  font-family: 'DM Sans', 'Inter', sans-serif;
+  background: var(--surface);
+  color: var(--text-base);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-/* ── Scrollbar ── */
+/* ── Scrollbar ─────────────────────────────────────────────────────── */
 ::-webkit-scrollbar          { width: 5px; height: 5px; }
-::-webkit-scrollbar-track    { background: none; }
+::-webkit-scrollbar-track    { background: transparent; }
 ::-webkit-scrollbar-thumb    { background: #94a3b8; border-radius: 9999px; }
-::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+::-webkit-scrollbar-thumb:hover { background: #1e3a8a; }
 
-/* ── Spinner ── */
+/* ── Spinner ───────────────────────────────────────────────────────── */
 @keyframes spin { to { transform: rotate(360deg); } }
 .spinner {
   border: 3px solid #e2e8f0;
@@ -29,43 +46,88 @@ body {
   width: 22px; height: 22px;
   animation: spin 0.7s linear infinite;
   display: inline-block;
+  vertical-align: middle;
 }
 
-/* ── Table row hover ── */
+/* ── Water ripple ──────────────────────────────────────────────────── */
+@keyframes ripple {
+  from { transform: scale(0); opacity: 1; }
+  to   { transform: scale(4); opacity: 0; }
+}
+.animate-ripple { animation: ripple 0.7s ease-out forwards; }
+
+/* ── Water blob morph ──────────────────────────────────────────────── */
+@keyframes blob-morph {
+  0%, 100% { border-radius: 60% 40% 70% 30% / 50% 60% 40% 70%; }
+  25%       { border-radius: 70% 30% 50% 50% / 30% 70% 60% 40%; }
+  50%       { border-radius: 40% 60% 30% 70% / 70% 30% 50% 50%; }
+  75%       { border-radius: 50% 50% 70% 30% / 60% 40% 30% 70%; }
+}
+.blob-morph {
+  animation: blob-morph 8s ease-in-out infinite;
+}
+
+/* ── Wave animation ────────────────────────────────────────────────── */
+@keyframes wave {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.wave-animate { animation: wave 12s linear infinite; }
+
+/* ── Slide-up ──────────────────────────────────────────────────────── */
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+.animate-slide-up { animation: slide-up 0.4s ease-out forwards; }
+
+/* ── Pulse glow ────────────────────────────────────────────────────── */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(30,58,138,0.4); }
+  50%       { box-shadow: 0 0 0 12px rgba(30,58,138,0); }
+}
+.pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+/* ── Float ─────────────────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+.float { animation: float 4s ease-in-out infinite; }
+
+/* ── Water drop fall ───────────────────────────────────────────────── */
+@keyframes drop-fall {
+  0%   { transform: translateY(-20px); opacity: 0.8; }
+  80%  { opacity: 0.6; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* ── Table styles (admin & portal) ─────────────────────────────────── */
 tbody tr { transition: background-color 0.12s; }
 tbody tr:hover { background-color: #eff6ff !important; }
+table tbody tr:nth-child(even) { background-color: #ffffff !important; }
+table tbody tr:nth-child(odd)  { background-color: #dbeafe !important; }
+table th:hover                 { background-color: #1e3a8a !important; cursor: pointer; }
 
-/* Even / Odd row colors - stronger grey */
-table tbody tr:nth-child(even) {
-  background-color: #ffffff !important;
+/* ── Card hover ────────────────────────────────────────────────────── */
+.card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(30, 58, 138, 0.12);
 }
 
-table tbody tr:nth-child(odd) {
-  background-color: #dbeafe !important;
-}
-
-/* Hover effect */
-table tbody tr:hover {
-  background-color: #e0e0e0 !important;
-}
-/* ── Modal backdrop ── */
-.modal-backdrop { 
-  --webkit-backdrop-filter: blur(4px);
-
-}
-
-table th:hover { background-color: #1e3a8a !important; }
-
-/* ── Card hover lift ── */
-.card-hover { transition: transform 0.18s ease, box-shadow 0.18s ease; }
-.card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(30,58,138,.13); }
-
-/* ── Sidebar widths ── */
+/* ── Sidebar ───────────────────────────────────────────────────────── */
 .sidebar-w-open  { width: 256px; }
 .sidebar-w-close { width: 72px; }
 .sidebar-transition { transition: width 0.28s cubic-bezier(0.4,0,0.2,1); }
 
-/* ── File input ── */
+/* ── Modal backdrop ────────────────────────────────────────────────── */
+.modal-backdrop {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+/* ── File input ────────────────────────────────────────────────────── */
 input[type="file"]::-webkit-file-upload-button {
   background: #eff6ff; color: #1e40af; border: none;
   padding: 4px 12px; border-radius: 8px; cursor: pointer;
@@ -73,23 +135,12 @@ input[type="file"]::-webkit-file-upload-button {
 }
 input[type="file"]::-webkit-file-upload-button:hover { background: #dbeafe; }
 
-/* ── Select ── */
-select { background-image: none; }
-html {
-  font-size: 17px; /* default is 16px → increase globally */
-}
+/* ── Selection ─────────────────────────────────────────────────────── */
+::selection { background: #1e3a8a; color: white; }
 
-@keyframes slide-up {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.animate-slide-up {
-  animation: slide-up 0.3s ease-out;
+/* ── Focus visible ─────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #1e3a8a;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
