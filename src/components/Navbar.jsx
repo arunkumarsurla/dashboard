@@ -191,7 +191,7 @@ export default function Navbar() {
                   MKL Enterprises
                 </div>
                 <div className={`text-[10px] font-bold tracking-[0.18em] uppercase transition-colors duration-300 ${scrolled ? "text-blue-400" : "text-blue-200/80"}`}>
-                  Premium Rentals
+                  Sales / Services & Rentals
                 </div>
               </div>
             </Link>
