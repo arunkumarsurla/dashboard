@@ -4,7 +4,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 
-
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
 // ── Shared helpers ──────────────────────────────────────────────────────────
@@ -90,27 +89,27 @@ const TIMELINE = [
   {
     year: "2018",
     title: "Founded",
-    desc: "MKL Enterprises was established at NAD Junction, Visakhapatnam with a mission to provide clean water to every household.",
+    desc: "MKL Enterprises was established at NAD Junction, Visakhapatnam with a mission to provide clean water solutions to every household.",
   },
   {
     year: "2019",
-    title: "Rental Model Launched",
-    desc: "We pioneered the purifier-rental model in Vizag — making clean water affordable without a large upfront investment.",
+    title: "Sales & Service Launched",
+    desc: "Started providing professional installation and maintenance services for all major water purifier brands across Vizag.",
   },
   {
     year: "2021",
-    title: "100 Happy Families",
-    desc: "Crossed the 100-customer milestone with a 5-star satisfaction rating across all rentals and services.",
+    title: "500 Happy Customers",
+    desc: "Crossed the 500-customer milestone with a 5-star satisfaction rating across sales, installation, and service.",
   },
   {
     year: "2023",
     title: "Expanded to 8 Brands",
-    desc: "Now authorized service partners for 8 major brands including Kent, Aquaguard, Livpure, Pureit, and more.",
+    desc: "Became authorized service partners for 8 major brands including Kent, Aquaguard, Livpure, Pureit, and more.",
   },
   {
     year: "2026",
-    title: "500+ Renters & Counting",
-    desc: "Serving 500+ families across 200+ areas in and around Visakhapatnam with same-day service and zero-cost maintenance.",
+    title: "1000+ Customers Strong",
+    desc: "Serving 1000+ families across 200+ areas with complete solutions: sales, installation, AMC, repair, and rental services.",
   },
 ];
 
@@ -151,19 +150,19 @@ const TEAM = [
   {
     name: "Kiran Kumar",
     role: "Founder & CEO",
-    desc: "10+ years in water purification. Started MKL to make clean water accessible to all Vizag families.",
+    desc: "10+ years in water purification. Started MKL to make clean water accessible to all Vizag families through sales, service, and rental options.",
     emoji: "👨‍💼",
   },
   {
     name: "Lakshmi Devi",
     role: "Customer Relations Head",
-    desc: "Ensures every renter gets white-glove support from day one to the last day of their plan.",
+    desc: "Ensures every customer gets excellent support whether they purchase, rent, or use our maintenance services.",
     emoji: "👩‍💼",
   },
   {
     name: "Mahesh Rao",
     role: "Lead Technician",
-    desc: "Certified across 8 brands. Has personally installed and serviced 400+ purifiers across Vizag.",
+    desc: "Certified across 8 brands. Has personally installed, serviced, and repaired 800+ purifiers across Vizag.",
     emoji: "👨‍🔧",
   },
 ];

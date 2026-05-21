@@ -227,7 +227,7 @@ export default function PlansPage() {
   const rentalRef = useRef(null);
   const amcRef = useRef(null);
   const compareRef = useRef(null);
-  const [activeTab, setActiveTab] = useState("rental");
+  const [activeTab, setActiveTab] = useState("amc");
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -360,8 +360,9 @@ export default function PlansPage() {
             </span>
           </h1>
           <p className="plans-hero-sub text-lg text-blue-200 leading-relaxed">
-            No hidden fees. No surprises. Just clean water at a fixed monthly
-            cost — with everything included.
+            Choose AMC maintenance plans to keep your purifier running
+            perfectly. Or explore affordable rental options if you want to try
+            before buying.
           </p>
         </div>
       </section>
@@ -371,16 +372,16 @@ export default function PlansPage() {
         <div className="max-w-xs mx-auto px-6">
           <div className="flex bg-white rounded-2xl p-1.5 border border-blue-100 shadow-sm">
             <button
-              onClick={() => setActiveTab("rental")}
-              className={`flex-1 py-2.5 rounded-xl font-bold text-sm transition-all ${activeTab === "rental" ? "bg-[#1e3a8a] text-white shadow-lg shadow-blue-900/30" : "text-slate-500 hover:text-[#1e3a8a]"}`}
-            >
-              Rental Plans
-            </button>
-            <button
               onClick={() => setActiveTab("amc")}
               className={`flex-1 py-2.5 rounded-xl font-bold text-sm transition-all ${activeTab === "amc" ? "bg-[#1e3a8a] text-white shadow-lg shadow-blue-900/30" : "text-slate-500 hover:text-[#1e3a8a]"}`}
             >
               AMC Plans
+            </button>
+            <button
+              onClick={() => setActiveTab("rental")}
+              className={`flex-1 py-2.5 rounded-xl font-bold text-sm transition-all ${activeTab === "rental" ? "bg-[#1e3a8a] text-white shadow-lg shadow-blue-900/30" : "text-slate-500 hover:text-[#1e3a8a]"}`}
+            >
+              Rental Plans
             </button>
           </div>
         </div>

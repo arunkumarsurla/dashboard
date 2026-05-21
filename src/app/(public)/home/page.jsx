@@ -13,107 +13,104 @@ if (typeof window !== "undefined") {
 // ─── DATA ────────────────────────────────────────────────────────────────────
 const BRANDS = [
   { name: "Aquaguard", icon: "💧" },
-  { name: "Bluestar",  icon: "🌊" },
-  { name: "Bpure",     icon: "💦" },
-  { name: "Kent",      icon: "🫧" },
-  { name: "Livpure",   icon: "💧" },
-  { name: "Pureit",    icon: "🌊" },
-  { name: "LG",        icon: "💦" },
+  { name: "Bluestar", icon: "🌊" },
+  { name: "Bpure", icon: "💦" },
+  { name: "Kent", icon: "🫧" },
+  { name: "Livpure", icon: "💧" },
+  { name: "Pureit", icon: "🌊" },
+  { name: "LG", icon: "💦" },
   { name: "Whirlpool", icon: "🫧" },
 ];
 
 const SERVICES = [
   {
     icon: "🚿",
-    title: "Doorstep Delivery",
-    desc: "We deliver and install your rented purifier right at your home — hassle-free within 24 hours of booking.",
-    price: "Free Delivery",
+    title: "Professional Installation",
+    desc: "Expert installation of your new purifier at home. We handle all connections, testing, and water quality checks.",
+    price: "Professional",
   },
   {
     icon: "🔧",
-    title: "Free Maintenance",
-    desc: "All rentals include scheduled maintenance, filter checks, and servicing at no extra cost.",
-    price: "Included",
+    title: "Maintenance Service",
+    desc: "Regular scheduled maintenance keeps your purifier running at peak performance. Filter checks and servicing included.",
+    price: "Affordable",
   },
   {
     icon: "🔬",
     title: "Filter Replacement",
-    desc: "Membrane, Carbon, CTO and all filter types replaced on schedule — fully covered in your rental.",
-    price: "Covered",
+    desc: "Genuine filters and membranes for all major brands. Membrane, Carbon, CTO and all types available.",
+    price: "Genuine Parts",
   },
   {
     icon: "🛠️",
-    title: "Free Repairs",
-    desc: "Any breakdown? We fix it same-day at no charge. Your rental includes full repair coverage.",
-    price: "Zero Cost",
+    title: "Repair Service",
+    desc: "Same-day repair service for any issues. Certified technicians trained across all major purifier brands.",
+    price: "Quick Service",
   },
   {
-    icon: "🔄",
-    title: "Upgrade Anytime",
-    desc: "Switch to a newer or better purifier model anytime during your rental period — no questions asked.",
-    price: "Flexible",
+    icon: "📋",
+    title: "Annual Maintenance",
+    desc: "AMC plans for peace of mind. Fixed yearly cost covers all scheduled services and priority support.",
+    price: "Affordable Plans",
   },
   {
     icon: "🏠",
-    title: "Pickup & Relocation",
-    desc: "Moving? We pick up, relocate, and reinstall your rented purifier at your new address for free.",
-    price: "Zero Charges",
+    title: "Water Rental Option",
+    desc: "Can't buy? Try our flexible rental plans. Try before you buy with affordable monthly rental options.",
+    price: "Zero Upfront",
   },
 ];
 
 const PLANS = [
   {
-    name: "3 Months",
-    price: "₹599",
-    period: "/month",
+    name: "Basic AMC",
+    price: "₹1,499",
+    period: "/year",
     color: "#3b82f6",
     features: [
-      "Any 1 Purifier Model",
-      "Free Installation",
-      "Free Maintenance",
-      "Filter Replacement Covered",
+      "2 Scheduled Services",
+      "Filter Check & Clean",
       "Phone Support",
+      "Genuine Parts Used",
+      "Service Reports",
     ],
     popular: false,
   },
   {
-    name: "6 Months",
-    price: "₹499",
-    period: "/month",
+    name: "Standard AMC",
+    price: "₹2,499",
+    period: "/year",
     color: "#1e3a8a",
     features: [
-      "Any 1 Purifier Model",
-      "Free Installation",
-      "Free Maintenance",
-      "Filter Replacement Covered",
-      "Priority Support",
-      "Free Relocation",
+      "4 Scheduled Services",
+      "All Filter Replacements",
+      "Priority Dispatch",
+      "1 Free Repair Visit",
+      "24/7 Support",
     ],
     popular: true,
   },
   {
-    name: "12 Months",
-    price: "₹399",
-    period: "/month",
+    name: "Premium AMC",
+    price: "₹3,999",
+    period: "/year",
     color: "#0f172a",
     features: [
-      "Any 1 Purifier Model",
-      "Free Installation",
-      "Free Maintenance",
-      "All Filter Replacements",
-      "Membrane Covered",
+      "6 Scheduled Services",
+      "All Filters & Membrane",
+      "Unlimited Repairs",
       "24/7 Emergency Support",
-      "Free Relocation",
+      "Water Quality Tests",
     ],
     popular: false,
   },
 ];
 
 const STATS = [
-  { value: "500+", label: "Happy Renters" },
-  { value: "20+",  label: "Brands Available" },
+  { value: "1000+", label: "Happy Customers" },
+  { value: "20+", label: "Brands Available" },
   { value: "200+", label: "Areas Covered" },
-  { value: "5★",   label: "Rental Rating" },
+  { value: "5★", label: "Service Rating" },
 ];
 
 const TESTIMONIALS = [
@@ -121,37 +118,52 @@ const TESTIMONIALS = [
     name: "Ravi Kumar",
     area: "MVP Colony",
     rating: 5,
-    text: "Rented for 6 months and it's been amazing. Purifier was installed the same day, and maintenance is totally free. Best decision!",
+    text: "Best decision to buy from MKL. Installation was perfect, and their after-sales service is outstanding. Maintenance is hassle-free!",
   },
   {
     name: "Priya Sharma",
     area: "Maddilapalem",
     rating: 5,
-    text: "No upfront cost, free service, and they even shifted the purifier when I moved. MKL rentals are unbeatable in Vizag.",
+    text: "Great customer service and professional installation. They respond immediately and fixed an issue same-day. Highly recommended!",
   },
   {
     name: "Suresh Babu",
     area: "Gajuwaka",
     rating: 5,
-    text: "Paying monthly is so much easier than buying outright. Clean water every day and zero maintenance worries.",
+    text: "Perfect purifier for Vizag's hard water. MKL's technicians are certified and genuine parts make all the difference. Best choice!",
   },
 ];
 
 // ─── WATER BLOB SVG ──────────────────────────────────────────────────────────
-function WaterBlob({ className = "", color = "#1e3a8a", opacity = 0.08, size = 600, animate = true }) {
+function WaterBlob({
+  className = "",
+  color = "#1e3a8a",
+  opacity = 0.08,
+  size = 600,
+  animate = true,
+}) {
   const blobRef = useRef(null);
   useEffect(() => {
     if (!animate || !blobRef.current) return;
     gsap.to(blobRef.current, {
-      attr: { d: "M60,0 C93,0 120,27 120,60 C120,93 100,115 60,120 C20,125 0,93 0,60 C0,27 27,0 60,0 Z" },
-      duration: 2,           // reduced from 4
+      attr: {
+        d: "M60,0 C93,0 120,27 120,60 C120,93 100,115 60,120 C20,125 0,93 0,60 C0,27 27,0 60,0 Z",
+      },
+      duration: 2, // reduced from 4
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut",
     });
   }, [animate]);
   return (
-    <svg className={className} width={size} height={size} viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      className={className}
+      width={size}
+      height={size}
+      viewBox="0 0 120 120"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         ref={blobRef}
         d="M60,0 C95,5 120,30 115,65 C110,100 85,120 50,118 C15,116 0,90 0,60 C0,25 25,-5 60,0 Z"
@@ -176,7 +188,12 @@ function RippleButton({ children, className = "", onClick, href, type }) {
   };
   const Tag = href ? "a" : "button";
   return (
-    <Tag href={href} type={type} className={`relative overflow-hidden ${className}`} onClick={handleClick}>
+    <Tag
+      href={href}
+      type={type}
+      className={`relative overflow-hidden ${className}`}
+      onClick={handleClick}
+    >
       {ripples.map((rp) => (
         <span
           key={rp.id}
@@ -202,26 +219,82 @@ function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 0.1 });        // reduced from 0.5
-      tl.fromTo(".hero-eyebrow", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" })   // y: 30→20, dur: 0.7→0.35
-        .fromTo(".hero-title",   { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, "-=0.2")  // y: 50→30, dur: 0.9→0.45
-        .fromTo(".hero-sub",     { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, "-=0.2")  // y: 30→20, dur: 0.7→0.35
-        .fromTo(".hero-ctas",    { y: 15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3,  ease: "power3.out" }, "-=0.15") // y: 20→15, dur: 0.6→0.3
-        .fromTo(".hero-stat",    { y: 15, opacity: 0, scale: 0.95 }, { y: 0, opacity: 1, scale: 1, duration: 0.25, stagger: 0.06, ease: "back.out(1.4)" }, "-=0.1"); // reduced all
+      const tl = gsap.timeline({ delay: 0.1 }); // reduced from 0.5
+      tl.fromTo(
+        ".hero-eyebrow",
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" },
+      ) // y: 30→20, dur: 0.7→0.35
+        .fromTo(
+          ".hero-title",
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" },
+          "-=0.2",
+        ) // y: 50→30, dur: 0.9→0.45
+        .fromTo(
+          ".hero-sub",
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" },
+          "-=0.2",
+        ) // y: 30→20, dur: 0.7→0.35
+        .fromTo(
+          ".hero-ctas",
+          { y: 15, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" },
+          "-=0.15",
+        ) // y: 20→15, dur: 0.6→0.3
+        .fromTo(
+          ".hero-stat",
+          { y: 15, opacity: 0, scale: 0.95 },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.25,
+            stagger: 0.06,
+            ease: "back.out(1.4)",
+          },
+          "-=0.1",
+        ); // reduced all
 
-      gsap.to(".blob-1", { y: -20, x: 10,  duration: 3,  repeat: -1, yoyo: true, ease: "sine.inOut" });             // y: -30→-20, x: 15→10,  dur: 6→3
-      gsap.to(".blob-2", { y: 15,  x: -12, duration: 4,  repeat: -1, yoyo: true, ease: "sine.inOut", delay: 0.5 }); // y: 25→15,  x: -20→-12, dur: 8→4, delay: 1→0.5
-      gsap.to(".blob-3", { y: -12, x: 6,   duration: 3.5,repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1 });   // y: -20→-12, x: 10→6,   dur: 7→3.5, delay: 2→1
+      gsap.to(".blob-1", {
+        y: -20,
+        x: 10,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      }); // y: -30→-20, x: 15→10,  dur: 6→3
+      gsap.to(".blob-2", {
+        y: 15,
+        x: -12,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: 0.5,
+      }); // y: 25→15,  x: -20→-12, dur: 8→4, delay: 1→0.5
+      gsap.to(".blob-3", {
+        y: -12,
+        x: 6,
+        duration: 3.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: 1,
+      }); // y: -20→-12, x: 10→6,   dur: 7→3.5, delay: 2→1
 
       document.querySelectorAll(".drop").forEach((drop, i) => {
         gsap.to(drop, {
           y: "120vh",
           opacity: 0,
-          duration: gsap.utils.random(1.5, 3.5),       // reduced from 3–7
+          duration: gsap.utils.random(1.5, 3.5), // reduced from 3–7
           repeat: -1,
-          delay: i * 0.2,                               // reduced from 0.4
+          delay: i * 0.2, // reduced from 0.4
           ease: "power1.in",
-          onRepeat: () => { gsap.set(drop, { y: -20, opacity: gsap.utils.random(0.3, 0.8) }); },
+          onRepeat: () => {
+            gsap.set(drop, { y: -20, opacity: gsap.utils.random(0.3, 0.8) });
+          },
         });
       });
     }, heroRef);
@@ -233,7 +306,10 @@ function Hero() {
       ref={heroRef}
       id="hero"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #0a1628 0%, #1e3a8a 50%, #1e4db7 100%)" }}
+      style={{
+        background:
+          "linear-gradient(135deg, #0a1628 0%, #1e3a8a 50%, #1e4db7 100%)",
+      }}
     >
       {/* Animated water blobs */}
       <div className="blob-1 absolute -top-32 -right-32 opacity-20 pointer-events-none">
@@ -251,7 +327,12 @@ function Hero() {
         <span
           key={i}
           className="drop absolute text-blue-300 text-opacity-60 pointer-events-none select-none"
-          style={{ left: `${(i * 8.5) % 100}%`, top: `-${20 + i * 7}px`, fontSize: `${8 + (i % 5) * 3}px`, opacity: 0.5 }}
+          style={{
+            left: `${(i * 8.5) % 100}%`,
+            top: `-${20 + i * 7}px`,
+            fontSize: `${8 + (i % 5) * 3}px`,
+            opacity: 0.5,
+          }}
         >
           💧
         </span>
@@ -261,15 +342,24 @@ function Hero() {
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+          backgroundImage:
+            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
 
       {/* Wave bottom */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#f1f5f9" />
+        <svg
+          viewBox="0 0 1440 80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full"
+        >
+          <path
+            d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z"
+            fill="#f1f5f9"
+          />
         </svg>
       </div>
 
@@ -279,7 +369,7 @@ function Hero() {
           <div className="hero-eyebrow inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
             <span className="w-2 h-2 rounded-full bg-blue-300 animate-pulse" />
             <span className="text-blue-200 text-sm font-semibold tracking-wider uppercase">
-              Visakhapatnam&apos;s #1 Purifier Rental Service
+              Visakhapatnam&apos;s #1 Purifier Sales & Service Center
             </span>
           </div>
 
@@ -287,16 +377,19 @@ function Hero() {
             Pure Water.
             <span
               className="block text-transparent bg-clip-text"
-              style={{ backgroundImage: "linear-gradient(135deg, #60a5fa, #93c5fd, #bfdbfe)" }}
+              style={{
+                backgroundImage:
+                  "linear-gradient(135deg, #60a5fa, #93c5fd, #bfdbfe)",
+              }}
             >
               Better Life.
             </span>
           </h1>
 
           <p className="hero-sub text-lg text-blue-200 leading-relaxed mb-8 max-w-lg">
-            Rent premium water purifiers with zero upfront cost. Flexible plans
-            with free installation, maintenance, and filter replacement. Expert
-            support across Visakhapatnam.
+            Buy premium water purifiers with expert installation and lifetime
+            support. Professional servicing, maintenance, and filter
+            replacement. Trusted by 1000+ families across Visakhapatnam.
           </p>
 
           <div className="hero-ctas flex flex-wrap gap-4">
@@ -304,13 +397,13 @@ function Hero() {
               href="/contact"
               className="flex items-center gap-2 bg-white text-[#1e3a8a] font-bold px-8 py-4 rounded-2xl hover:bg-blue-50 transition-all shadow-xl shadow-black/20 text-base"
             >
-              <span>💧</span> Start Your Rental
+              <span>💧</span> Get Your Purifier
             </RippleButton>
             <Link
-              href="/plans"
+              href="/services"
               className="flex items-center gap-2 border-2 border-white/40 text-white font-bold px-8 py-4 rounded-2xl hover:bg-white/10 hover:border-white transition-all text-base"
             >
-              View Plans <span>→</span>
+              Our Services <span>→</span>
             </Link>
           </div>
         </div>
@@ -322,7 +415,10 @@ function Hero() {
               key={i}
               className="hero-stat group relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all hover:-translate-y-1 duration-300"
             >
-              <div className="text-4xl font-black text-white mb-1" style={{ fontVariantNumeric: "tabular-nums" }}>
+              <div
+                className="text-4xl font-black text-white mb-1"
+                style={{ fontVariantNumeric: "tabular-nums" }}
+              >
                 {s.value}
               </div>
               <div className="text-blue-200 text-sm font-medium">{s.label}</div>
@@ -340,7 +436,12 @@ function BrandsMarquee() {
   const trackRef = useRef(null);
   useEffect(() => {
     if (!trackRef.current) return;
-    gsap.to(trackRef.current, { x: "-50%", duration: 12, repeat: -1, ease: "none" }); // reduced from 20
+    gsap.to(trackRef.current, {
+      x: "-50%",
+      duration: 12,
+      repeat: -1,
+      ease: "none",
+    }); // reduced from 20
   }, []);
 
   const doubled = [...BRANDS, ...BRANDS];
@@ -356,7 +457,9 @@ function BrandsMarquee() {
               key={i}
               className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-blue-50 border border-blue-100 hover:border-[#1e3a8a] hover:bg-blue-100 transition-all cursor-default group"
             >
-              <span className="text-2xl group-hover:scale-110 transition-transform">{b.icon}</span>
+              <span className="text-2xl group-hover:scale-110 transition-transform">
+                {b.icon}
+              </span>
               <span className="font-bold text-slate-700 text-sm">{b.name}</span>
             </div>
           ))}
@@ -375,10 +478,18 @@ function ServicesPreview() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".service-card",
-        { y: 40, opacity: 0 },                         // y: 60→40
+        { y: 40, opacity: 0 }, // y: 60→40
         {
-          y: 0, opacity: 1, duration: 0.4, stagger: 0.07, ease: "power3.out",   // dur: 0.7→0.4, stagger: 0.12→0.07
-          scrollTrigger: { trigger: ".services-grid", start: "top 80%", once: true },
+          y: 0,
+          opacity: 1,
+          duration: 0.4,
+          stagger: 0.07,
+          ease: "power3.out", // dur: 0.7→0.4, stagger: 0.12→0.07
+          scrollTrigger: {
+            trigger: ".services-grid",
+            start: "top 80%",
+            once: true,
+          },
         },
       );
     }, sectionRef);
@@ -396,7 +507,8 @@ function ServicesPreview() {
             Every Service You <span className="text-[#1e3a8a]">Need</span>
           </h2>
           <p className="text-slate-500 max-w-xl mx-auto text-lg">
-            From installation to emergency repair — we handle everything so you always have clean water.
+            From installation to emergency repair — we handle everything so you
+            always have clean water.
           </p>
         </div>
 
@@ -409,11 +521,20 @@ function ServicesPreview() {
               <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-2xl mb-5 group-hover:bg-[#1e3a8a] group-hover:scale-110 transition-all duration-300">
                 <span>{s.icon}</span>
               </div>
-              <h3 className="font-black text-slate-900 text-lg mb-2">{s.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-4">{s.desc}</p>
+              <h3 className="font-black text-slate-900 text-lg mb-2">
+                {s.title}
+              </h3>
+              <p className="text-slate-500 text-sm leading-relaxed mb-4">
+                {s.desc}
+              </p>
               <div className="flex items-center justify-between">
-                <span className="font-bold text-[#1e3a8a] text-sm">{s.price}</span>
-                <Link href="/contact" className="text-xs font-bold text-[#1e3a8a] opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                <span className="font-bold text-[#1e3a8a] text-sm">
+                  {s.price}
+                </span>
+                <Link
+                  href="/contact"
+                  className="text-xs font-bold text-[#1e3a8a] opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1"
+                >
                   Book Now →
                 </Link>
               </div>
@@ -440,19 +561,43 @@ function ServicesPreview() {
 function HowItWorks() {
   const ref = useRef(null);
   const steps = [
-    { num: "01", icon: "📱", title: "Choose Your Plan",    desc: "Pick a rental plan - 3 months, 6 months, or 12 months. No long-term commitment." },
-    { num: "02", icon: "🏠", title: "Free Installation",   desc: "Certified technician delivers and installs your purifier at your home within 24 hours." },
-    { num: "03", icon: "⚙️", title: "Free Maintenance",    desc: "Regular maintenance, filter replacements, and repairs included in your rental." },
-    { num: "04", icon: "📄", title: "Flexible Options",    desc: "Upgrade anytime, relocate, or cancel - complete flexibility throughout your rental." },
+    {
+      num: "01",
+      icon: "📱",
+      title: "Choose Your Model",
+      desc: "Browse our range of premium water purifiers from top brands available in Vizag.",
+    },
+    {
+      num: "02",
+      icon: "🏠",
+      title: "Expert Installation",
+      desc: "Certified technician delivers and installs your purifier at your home within 24 hours.",
+    },
+    {
+      num: "03",
+      icon: "⚙️",
+      title: "Lifetime Support",
+      desc: "Regular maintenance, filter replacements, and repairs available throughout the year.",
+    },
+    {
+      num: "04",
+      icon: "📄",
+      title: "Great Warranty",
+      desc: "Comprehensive warranty and support plans to protect your investment in pure water.",
+    },
   ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".how-step",
-        { x: -30, opacity: 0 },                        // x: -50→-30
+        { x: -30, opacity: 0 }, // x: -50→-30
         {
-          x: 0, opacity: 1, duration: 0.35, stagger: 0.08, ease: "power3.out",  // dur: 0.6→0.35, stagger: 0.15→0.08
+          x: 0,
+          opacity: 1,
+          duration: 0.35,
+          stagger: 0.08,
+          ease: "power3.out", // dur: 0.6→0.35, stagger: 0.15→0.08
           scrollTrigger: { trigger: ref.current, start: "top 75%", once: true },
         },
       );
@@ -462,11 +607,16 @@ function HowItWorks() {
 
   return (
     <section ref={ref} className="py-24 bg-white relative overflow-hidden">
-      <WaterBlob className="absolute -right-40 top-0 opacity-40" color="#dbeafe" size={500} animate={false} />
+      <WaterBlob
+        className="absolute -right-40 top-0 opacity-40"
+        color="#dbeafe"
+        size={500}
+        animate={false}
+      />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block bg-blue-100 text-[#1e3a8a] text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-4">
-            Easy Rental Process
+            Simple Process
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-slate-900">
             How To <span className="text-[#1e3a8a]">Get Started</span>
@@ -488,7 +638,9 @@ function HowItWorks() {
                   </span>
                 </div>
                 <h3 className="font-black text-slate-900 mb-2">{s.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{s.desc}</p>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  {s.desc}
+                </p>
               </div>
             </div>
           ))}
@@ -515,9 +667,13 @@ function PlansPreview() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".plan-card",
-        { y: 50, opacity: 0 },                         // y: 80→50
+        { y: 50, opacity: 0 }, // y: 80→50
         {
-          y: 0, opacity: 1, duration: 0.45, stagger: 0.1, ease: "back.out(1.2)",  // dur: 0.8→0.45, stagger: 0.15→0.1
+          y: 0,
+          opacity: 1,
+          duration: 0.45,
+          stagger: 0.1,
+          ease: "back.out(1.2)", // dur: 0.8→0.45, stagger: 0.15→0.1
           scrollTrigger: { trigger: ref.current, start: "top 75%", once: true },
         },
       );
@@ -530,7 +686,10 @@ function PlansPreview() {
       ref={ref}
       id="plans"
       className="py-24 relative overflow-hidden"
-      style={{ background: "linear-gradient(160deg, #0a1628 0%, #1e3a8a 60%, #1e4db7 100%)" }}
+      style={{
+        background:
+          "linear-gradient(160deg, #0a1628 0%, #1e3a8a 60%, #1e4db7 100%)",
+      }}
     >
       {/* Decorative waves */}
       <div className="absolute top-0 left-0 right-0">
@@ -544,18 +703,23 @@ function PlansPreview() {
         </svg>
       </div>
 
-      <WaterBlob className="absolute top-0 right-0 opacity-10" color="#93c5fd" size={500} />
+      <WaterBlob
+        className="absolute top-0 right-0 opacity-10"
+        color="#93c5fd"
+        size={500}
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-10">
         <div className="text-center mb-16">
           <span className="inline-block bg-white/10 text-blue-200 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full border border-white/20 mb-4">
-            Rental Plans
+            Maintenance Plans
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
             Simple, Honest <span className="text-blue-300">Pricing</span>
           </h2>
           <p className="text-blue-200 max-w-xl mx-auto">
-            Choose a rental plan that fits your needs. All plans include free delivery, installation, maintenance, and filter replacements.
+            Choose an AMC plan that fits your needs. All plans include scheduled
+            services, filter replacements, and genuine spare parts.
           </p>
         </div>
 
@@ -564,7 +728,9 @@ function PlansPreview() {
             <div
               key={i}
               className={`plan-card relative rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-3 ${
-                plan.popular ? "ring-2 ring-blue-300 ring-offset-4 ring-offset-[#1e3a8a]" : ""
+                plan.popular
+                  ? "ring-2 ring-blue-300 ring-offset-4 ring-offset-[#1e3a8a]"
+                  : ""
               }`}
             >
               {plan.popular && (
@@ -572,25 +738,37 @@ function PlansPreview() {
                   Most Popular
                 </div>
               )}
-              <div className={`p-8 ${plan.popular ? "bg-white" : "bg-white/10 backdrop-blur-md border border-white/20"}`}>
-                <h3 className={`font-black text-xl mb-1 ${plan.popular ? "text-[#1e3a8a]" : "text-white"}`}>
+              <div
+                className={`p-8 ${plan.popular ? "bg-white" : "bg-white/10 backdrop-blur-md border border-white/20"}`}
+              >
+                <h3
+                  className={`font-black text-xl mb-1 ${plan.popular ? "text-[#1e3a8a]" : "text-white"}`}
+                >
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline gap-1 mb-6">
-                  <span className={`text-5xl font-black ${plan.popular ? "text-[#1e3a8a]" : "text-white"}`}>
+                  <span
+                    className={`text-5xl font-black ${plan.popular ? "text-[#1e3a8a]" : "text-white"}`}
+                  >
                     {plan.price}
                   </span>
-                  <span className={`text-sm font-medium ${plan.popular ? "text-slate-400" : "text-blue-200"}`}>
+                  <span
+                    className={`text-sm font-medium ${plan.popular ? "text-slate-400" : "text-blue-200"}`}
+                  >
                     {plan.period}
                   </span>
                 </div>
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((f, j) => (
                     <li key={j} className="flex items-center gap-3">
-                      <span className={`w-5 h-5 rounded-full flex items-center justify-center text-xs flex-shrink-0 ${plan.popular ? "bg-[#1e3a8a] text-white" : "bg-white/20 text-white"}`}>
+                      <span
+                        className={`w-5 h-5 rounded-full flex items-center justify-center text-xs flex-shrink-0 ${plan.popular ? "bg-[#1e3a8a] text-white" : "bg-white/20 text-white"}`}
+                      >
                         ✓
                       </span>
-                      <span className={`text-sm font-medium ${plan.popular ? "text-slate-700" : "text-blue-100"}`}>
+                      <span
+                        className={`text-sm font-medium ${plan.popular ? "text-slate-700" : "text-blue-100"}`}
+                      >
                         {f}
                       </span>
                     </li>
@@ -621,7 +799,8 @@ function PlansPreview() {
         </div>
 
         <p className="text-center text-blue-300/60 text-sm mt-6">
-          All plans include doorstep service · Genuine spare parts · Certified technicians
+          All plans include service guarantee · Genuine spare parts · Certified
+          technicians · Warranty coverage
         </p>
       </div>
     </section>
@@ -635,9 +814,13 @@ function Testimonials() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".testi-card",
-        { y: 40, opacity: 0 },                         // y: 60→40
+        { y: 40, opacity: 0 }, // y: 60→40
         {
-          y: 0, opacity: 1, duration: 0.4, stagger: 0.1, ease: "power3.out",    // dur: 0.7→0.4, stagger: 0.2→0.1
+          y: 0,
+          opacity: 1,
+          duration: 0.4,
+          stagger: 0.1,
+          ease: "power3.out", // dur: 0.7→0.4, stagger: 0.2→0.1
           scrollTrigger: { trigger: ref.current, start: "top 80%", once: true },
         },
       );
@@ -663,14 +846,20 @@ function Testimonials() {
               key={i}
               className="testi-card bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-3xl p-8 hover:shadow-xl hover:shadow-blue-900/10 transition-all hover:-translate-y-1"
             >
-              <div className="flex text-yellow-400 mb-4 text-lg">{"★".repeat(t.rating)}</div>
-              <p className="text-slate-700 leading-relaxed mb-6 italic">&quot;{t.text}&quot;</p>
+              <div className="flex text-yellow-400 mb-4 text-lg">
+                {"★".repeat(t.rating)}
+              </div>
+              <p className="text-slate-700 leading-relaxed mb-6 italic">
+                &quot;{t.text}&quot;
+              </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#1e3a8a] flex items-center justify-center text-white font-black text-sm">
                   {t.name[0]}
                 </div>
                 <div>
-                  <div className="font-bold text-slate-900 text-sm">{t.name}</div>
+                  <div className="font-bold text-slate-900 text-sm">
+                    {t.name}
+                  </div>
                   <div className="text-xs text-slate-400">{t.area}</div>
                 </div>
               </div>
@@ -685,7 +874,12 @@ function Testimonials() {
 // ─── ENQUIRY FORM ─────────────────────────────────────────────────────────────
 function EnquiryForm() {
   const ref = useRef(null);
-  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -693,9 +887,12 @@ function EnquiryForm() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".form-inner",
-        { y: 40, opacity: 0 },                         // y: 60→40
+        { y: 40, opacity: 0 }, // y: 60→40
         {
-          y: 0, opacity: 1, duration: 0.45, ease: "power3.out",                  // dur: 0.8→0.45
+          y: 0,
+          opacity: 1,
+          duration: 0.45,
+          ease: "power3.out", // dur: 0.8→0.45
           scrollTrigger: { trigger: ref.current, start: "top 75%", once: true },
         },
       );
@@ -717,9 +914,15 @@ function EnquiryForm() {
       ref={ref}
       id="enquiry"
       className="py-24 relative overflow-hidden"
-      style={{ background: "linear-gradient(160deg, #0a1628 0%, #1e3a8a 100%)" }}
+      style={{
+        background: "linear-gradient(160deg, #0a1628 0%, #1e3a8a 100%)",
+      }}
     >
-      <WaterBlob className="absolute -bottom-20 -right-20 opacity-10" color="#93c5fd" size={500} />
+      <WaterBlob
+        className="absolute -bottom-20 -right-20 opacity-10"
+        color="#93c5fd"
+        size={500}
+      />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12">
@@ -729,16 +932,24 @@ function EnquiryForm() {
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
             Get in <span className="text-blue-300">Touch</span>
           </h2>
-          <p className="text-blue-200">Fill out the form and our team will contact you shortly.</p>
+          <p className="text-blue-200">
+            Fill out the form and our team will contact you shortly.
+          </p>
         </div>
 
         <div className="form-inner bg-white rounded-3xl p-8 md:p-12 shadow-2xl shadow-black/30">
           {submitted ? (
             <div className="text-center py-12">
-              <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center text-4xl mx-auto mb-6">✅</div>
-              <h3 className="text-2xl font-black text-slate-900 mb-3">Enquiry Submitted!</h3>
+              <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center text-4xl mx-auto mb-6">
+                ✅
+              </div>
+              <h3 className="text-2xl font-black text-slate-900 mb-3">
+                Enquiry Submitted!
+              </h3>
               <p className="text-slate-500 mb-6">
-                Thank you for contacting us.<br />Our team will get back to you soon.
+                Thank you for contacting us.
+                <br />
+                Our team will get back to you soon.
               </p>
               <Link
                 href="https://wa.me/918179019929?text=Hi!%20I%20just%20submitted%20an%20enquiry."
@@ -750,37 +961,59 @@ function EnquiryForm() {
           ) : (
             <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-5">
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2">Full Name *</label>
+                <label className="block text-sm font-bold text-slate-700 mb-2">
+                  Full Name *
+                </label>
                 <input
-                  type="text" required placeholder="Enter your name"
-                  value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  type="text"
+                  required
+                  placeholder="Enter your name"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
                   className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-800 font-medium focus:border-[#1e3a8a] focus:outline-none transition-colors"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2">Mobile Number *</label>
+                <label className="block text-sm font-bold text-slate-700 mb-2">
+                  Mobile Number *
+                </label>
                 <input
-                  type="tel" required pattern="[0-9]{10}" placeholder="Enter 10-digit number"
-                  value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  type="tel"
+                  required
+                  pattern="[0-9]{10}"
+                  placeholder="Enter 10-digit number"
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-800 font-medium focus:border-[#1e3a8a] focus:outline-none transition-colors"
                 />
               </div>
 
               <div className="md:col-span-2">
-                <label className="block text-sm font-bold text-slate-700 mb-2">Email Address *</label>
+                <label className="block text-sm font-bold text-slate-700 mb-2">
+                  Email Address *
+                </label>
                 <input
-                  type="email" required placeholder="Enter your email"
-                  value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  type="email"
+                  required
+                  placeholder="Enter your email"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
                   className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-800 font-medium focus:border-[#1e3a8a] focus:outline-none transition-colors"
                 />
               </div>
 
               <div className="md:col-span-2">
-                <label className="block text-sm font-bold text-slate-700 mb-2">Message</label>
+                <label className="block text-sm font-bold text-slate-700 mb-2">
+                  Message
+                </label>
                 <textarea
-                  rows={5} placeholder="Write your message here..."
-                  value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  rows={5}
+                  placeholder="Write your message here..."
+                  value={form.message}
+                  onChange={(e) =>
+                    setForm({ ...form, message: e.target.value })
+                  }
                   className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-800 font-medium focus:border-[#1e3a8a] focus:outline-none transition-colors resize-none"
                 />
               </div>
@@ -791,9 +1024,14 @@ function EnquiryForm() {
                   className="w-full py-4 bg-[#1e3a8a] text-white font-bold rounded-2xl hover:bg-blue-800 transition-colors flex items-center justify-center gap-3 text-base shadow-xl shadow-blue-900/30"
                 >
                   {loading ? (
-                    <><span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Processing...</>
+                    <>
+                      <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />{" "}
+                      Processing...
+                    </>
                   ) : (
-                    <><span>📩</span> Submit Enquiry</>
+                    <>
+                      <span>📩</span> Submit Enquiry
+                    </>
                   )}
                 </RippleButton>
                 <p className="text-center text-xs text-slate-400 mt-3">
@@ -815,9 +1053,13 @@ function AboutBand() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         [".about-left", ".about-right"],
-        { y: 40, opacity: 0 },                         // y: 60→40
+        { y: 40, opacity: 0 }, // y: 60→40
         {
-          y: 0, opacity: 1, duration: 0.45, stagger: 0.12, ease: "power3.out",  // dur: 0.8→0.45, stagger: 0.2→0.12
+          y: 0,
+          opacity: 1,
+          duration: 0.45,
+          stagger: 0.12,
+          ease: "power3.out", // dur: 0.8→0.45, stagger: 0.2→0.12
           scrollTrigger: { trigger: ref.current, start: "top 75%", once: true },
         },
       );
@@ -833,20 +1075,31 @@ function AboutBand() {
             About MKL
           </span>
           <h2 className="text-4xl font-black text-slate-900 mb-6">
-            Vizag&apos;s Trusted<br />
+            Vizag&apos;s Trusted
+            <br />
             <span className="text-[#1e3a8a]">Water Experts</span>
           </h2>
           <p className="text-slate-600 leading-relaxed mb-6">
-            MKL Enterprises has been serving Visakhapatnam families with pure, safe drinking water solutions.
-            Based at NAD Junction, we combine expert knowledge with genuine care for every customer.
+            MKL Enterprises has been serving Visakhapatnam families with pure,
+            safe drinking water solutions. Based at NAD Junction, we combine
+            expert knowledge with genuine care for every customer.
           </p>
           <p className="text-slate-600 leading-relaxed mb-8">
-            With 500+ satisfied customers, 15+ major brands serviced, and coverage across 200+ areas —
-            we&apos;re committed to ensuring your family always has clean water.
+            With 500+ satisfied customers, 15+ major brands serviced, and
+            coverage across 200+ areas — we&apos;re committed to ensuring your
+            family always has clean water.
           </p>
           <div className="flex flex-wrap gap-4 mb-8">
-            {["Genuine spare parts", "Certified technicians", "Same-day service", "Transparent billing"].map((item) => (
-              <div key={item} className="flex items-center gap-2 text-sm font-semibold text-slate-700">
+            {[
+              "Genuine spare parts",
+              "Certified technicians",
+              "Same-day service",
+              "Transparent billing",
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-2 text-sm font-semibold text-slate-700"
+              >
                 <span className="w-2 h-2 rounded-full bg-[#1e3a8a]" /> {item}
               </div>
             ))}
@@ -855,21 +1108,36 @@ function AboutBand() {
             href="/about"
             className="inline-flex items-center gap-2 border-2 border-[#1e3a8a] text-[#1e3a8a] font-bold px-8 py-3.5 rounded-2xl hover:bg-[#1e3a8a] hover:text-white transition-all duration-300"
           >
-            Learn More About Us →
+            About Our Journey →
           </Link>
         </div>
 
         <div className="about-right grid grid-cols-2 gap-4">
           {[
             { icon: "📞", title: "Call / WhatsApp", val: "+91 81790 19929" },
-            { icon: "✉️", title: "Email",           val: "mklenterprises1247@gmail.com" },
-            { icon: "📍", title: "Address",         val: "NAD Junction, Visakhapatnam AP 530027" },
-            { icon: "⏰", title: "Hours",            val: "Mon–Sat: 8AM–8PM\nSun: 9AM–5PM" },
+            { icon: "✉️", title: "Email", val: "mklenterprises1247@gmail.com" },
+            {
+              icon: "📍",
+              title: "Address",
+              val: "NAD Junction, Visakhapatnam AP 530027",
+            },
+            {
+              icon: "⏰",
+              title: "Hours",
+              val: "Mon–Sat: 8AM–8PM\nSun: 9AM–5PM",
+            },
           ].map((c, i) => (
-            <div key={i} className="bg-white rounded-2xl p-5 border border-blue-100 hover:border-[#1e3a8a]/30 hover:shadow-lg transition-all">
+            <div
+              key={i}
+              className="bg-white rounded-2xl p-5 border border-blue-100 hover:border-[#1e3a8a]/30 hover:shadow-lg transition-all"
+            >
               <div className="text-2xl mb-3">{c.icon}</div>
-              <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">{c.title}</div>
-              <div className="text-sm font-semibold text-slate-800 whitespace-pre-line">{c.val}</div>
+              <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">
+                {c.title}
+              </div>
+              <div className="text-sm font-semibold text-slate-800 whitespace-pre-line">
+                {c.val}
+              </div>
             </div>
           ))}
         </div>
@@ -885,13 +1153,19 @@ function PortalBanner() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-6">
           <div className="group relative bg-gradient-to-br from-[#1e3a8a] to-blue-700 rounded-3xl p-10 overflow-hidden hover:shadow-2xl hover:shadow-blue-900/30 transition-all hover:-translate-y-1">
-            <WaterBlob className="absolute -right-20 -top-20 opacity-20" color="white" size={250} animate={false} />
+            <WaterBlob
+              className="absolute -right-20 -top-20 opacity-20"
+              color="white"
+              size={250}
+              animate={false}
+            />
             <div className="relative z-10">
               <div className="text-4xl mb-4">👤</div>
               <h3 className="text-2xl font-black text-white mb-3">About Us</h3>
               <p className="text-blue-200 text-sm leading-relaxed mb-6">
-                About MKL Enterprises: Vizag&apos;s trusted water purifier experts. Based at NAD Junction,
-                we combine expert knowledge with genuine care for every customer.
+                About MKL Enterprises: Vizag&apos;s trusted water purifier
+                experts. Based at NAD Junction, we combine expert knowledge with
+                genuine care for every customer.
               </p>
               <Link
                 href="/about"
@@ -903,12 +1177,20 @@ function PortalBanner() {
           </div>
 
           <div className="group relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-10 overflow-hidden hover:shadow-2xl hover:shadow-black/30 transition-all hover:-translate-y-1">
-            <WaterBlob className="absolute -right-20 -top-20 opacity-10" color="#60a5fa" size={250} animate={false} />
+            <WaterBlob
+              className="absolute -right-20 -top-20 opacity-10"
+              color="#60a5fa"
+              size={250}
+              animate={false}
+            />
             <div className="relative z-10">
               <div className="text-4xl mb-4">🔔</div>
-              <h3 className="text-2xl font-black text-white mb-3">Raise a Complaint</h3>
+              <h3 className="text-2xl font-black text-white mb-3">
+                Raise a Complaint
+              </h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Facing an issue? Submit a complaint and get a unique tracking ID. We resolve within 24 hours.
+                Facing an issue? Submit a complaint and get a unique tracking
+                ID. We resolve within 24 hours.
               </p>
               <Link
                 href="/contact"
@@ -929,16 +1211,29 @@ function ContactBand() {
   return (
     <section className="py-16 bg-[#f1f5f9] border-t border-blue-100">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-black text-slate-900 mb-4">Still have questions?</h2>
-        <p className="text-slate-500 mb-8">Reach us on any channel — we respond fast.</p>
+        <h2 className="text-3xl font-black text-slate-900 mb-4">
+          Still have questions?
+        </h2>
+        <p className="text-slate-500 mb-8">
+          Reach us on any channel — we respond fast.
+        </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Link href="tel:8179019929" className="flex items-center gap-3 bg-[#1e3a8a] text-white font-bold px-6 py-3.5 rounded-2xl hover:bg-blue-800 transition-colors shadow-lg shadow-blue-900/20">
+          <Link
+            href="tel:8179019929"
+            className="flex items-center gap-3 bg-[#1e3a8a] text-white font-bold px-6 py-3.5 rounded-2xl hover:bg-blue-800 transition-colors shadow-lg shadow-blue-900/20"
+          >
             📞 Call Now
           </Link>
-          <Link href="https://wa.me/918179019929" className="flex items-center gap-3 bg-green-500 text-white font-bold px-6 py-3.5 rounded-2xl hover:bg-green-600 transition-colors shadow-lg shadow-green-900/20">
+          <Link
+            href="https://wa.me/918179019929"
+            className="flex items-center gap-3 bg-green-500 text-white font-bold px-6 py-3.5 rounded-2xl hover:bg-green-600 transition-colors shadow-lg shadow-green-900/20"
+          >
             💬 WhatsApp
           </Link>
-          <Link href="mailto:mklenterprises1247@gmail.com" className="flex items-center gap-3 bg-white text-slate-800 border-2 border-slate-200 font-bold px-6 py-3.5 rounded-2xl hover:border-[#1e3a8a] transition-colors">
+          <Link
+            href="mailto:mklenterprises1247@gmail.com"
+            className="flex items-center gap-3 bg-white text-slate-800 border-2 border-slate-200 font-bold px-6 py-3.5 rounded-2xl hover:border-[#1e3a8a] transition-colors"
+          >
             ✉️ Email Us
           </Link>
         </div>

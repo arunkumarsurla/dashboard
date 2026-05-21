@@ -84,30 +84,30 @@ function RippleButton({ children, className = "", href, onClick }) {
 // ── DATA ─────────────────────────────────────────────────────────────────────
 const SERVICES = [
   {
-    id: "rental",
-    icon: "🏠",
-    tag: "Most Popular",
-    title: "Purifier Rental",
-    subtitle: "From ₹399/month",
-    tagColor: "bg-blue-100 text-[#1e3a8a]",
-    desc: "Our flagship service. Get a premium water purifier at your doorstep with zero upfront cost. All maintenance, repairs, and filter replacements included throughout your rental period.",
+    id: "sales",
+    icon: "🛍️",
+    tag: "Top Choice",
+    title: "Purifier Sales",
+    subtitle: "Buy the right purifier",
+    tagColor: "bg-yellow-100 text-yellow-700",
+    desc: "Looking to own a purifier? We help you choose the right model based on your water quality, family size, and budget. We stock all top brands at competitive prices with professional installation included.",
     highlights: [
-      "Free doorstep delivery & installation",
-      "All maintenance included",
-      "All filter replacements covered",
-      "Free relocation when you move",
-      "Upgrade model anytime",
-      "No security deposit",
+      "8+ major brands available",
+      "Free TDS water testing",
+      "Demo before purchase",
+      "Professional installation",
+      "Full warranty handling",
+      "After-sale AMC available",
     ],
-    cta: "Start Renting",
-    href: "/plans",
+    cta: "Browse Models",
+    href: "/contact",
     featured: true,
   },
   {
     id: "installation",
     icon: "🔩",
     tag: "New Setup",
-    title: "New Installation",
+    title: "Installation Service",
     subtitle: "Own your purifier",
     tagColor: "bg-green-100 text-green-700",
     desc: "Purchasing a new purifier? We handle professional installation across all brands — correct wall mounting, pipe fitting, connection testing, and initial water quality check.",
@@ -184,23 +184,23 @@ const SERVICES = [
     featured: false,
   },
   {
-    id: "sales",
-    icon: "🛍️",
-    tag: "Purchase",
-    title: "Purifier Sales",
-    subtitle: "Buy with expert guidance",
-    tagColor: "bg-yellow-100 text-yellow-700",
-    desc: "Looking to own a purifier? We help you choose the right model based on your water quality, family size, and budget. We stock top brands at competitive prices.",
+    id: "rental",
+    icon: "🏠",
+    tag: "Try First",
+    title: "Purifier Rental",
+    subtitle: "Flexible monthly plans",
+    tagColor: "bg-blue-100 text-[#1e3a8a]",
+    desc: "Can't decide? Try our flexible rental option. Get a premium water purifier with zero upfront cost. Perfect for testing models before buying, or for temporary use.",
     highlights: [
-      "8+ brands available",
-      "TDS-based recommendation",
-      "Demo before purchase",
-      "Warranty handled",
-      "Installation included",
-      "After-sale AMC option",
+      "Free doorstep delivery & installation",
+      "All maintenance included",
+      "All filter replacements covered",
+      "Free relocation when you move",
+      "Upgrade model anytime",
+      "Convert to purchase anytime",
     ],
-    cta: "Enquire Now",
-    href: "/contact",
+    cta: "Explore Rental",
+    href: "/plans",
     featured: false,
   },
 ];
@@ -361,11 +361,11 @@ export default function ServicesPage() {
           <div className="svc-hero-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
             <span className="w-2 h-2 rounded-full bg-blue-300 animate-pulse" />
             <span className="text-blue-200 text-sm font-semibold tracking-wider uppercase">
-              Our Services
+              Complete Water Purifier Solutions
             </span>
           </div>
           <h1 className="svc-hero-title text-5xl md:text-6xl font-black text-white leading-tight mb-6">
-            Premium Water
+            Water Purifiers
             <br />
             <span
               className="text-transparent bg-clip-text"
@@ -374,22 +374,22 @@ export default function ServicesPage() {
                   "linear-gradient(135deg,#60a5fa,#93c5fd,#bfdbfe)",
               }}
             >
-              Purifier Rentals
+              Sales & Service
             </span>
           </h1>
           <p className="svc-hero-sub text-lg text-blue-200 leading-relaxed mb-10 max-w-2xl mx-auto">
-            Rent premium water purifiers with zero upfront cost. Free
-            installation, maintenance, and filter replacements. We specialize in
-            rentals with comprehensive sales and service support.
+            Buy the right water purifier with expert guidance. Professional
+            installation, maintenance, AMC plans, and repair services. Flexible
+            rental options also available for trying before buying.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             {[
-              "Purifier Rental",
+              "Purifier Sales",
               "Installation",
-              "AMC Plans",
+              "Maintenance",
               "Repair",
               "Filter Replacement",
-              "Purifier Sales",
+              "Rentals",
             ].map((pill, i) => (
               <span
                 key={i}
@@ -413,8 +413,9 @@ export default function ServicesPage() {
               Everything Under <span className="text-[#1e3a8a]">One Roof</span>
             </h2>
             <p className="text-slate-500 max-w-xl mx-auto">
-              Rentals are our primary service — but we are a complete water
-              purifier solutions company serving all of Visakhapatnam.
+              We are a complete water purifier solutions company. Buy, install,
+              maintain, or repair your purifier — we handle everything. Rentals
+              available for those who want to try before investing.
             </p>
           </div>
 

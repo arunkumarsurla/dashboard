@@ -143,12 +143,12 @@ export default function Footer() {
                   Terms &amp; Conditions
                 </Link>
 
-                <Link
+                {/* <Link
                   href="/admin"
                   className="text-slate-500 hover:text-blue-400 transition-colors"
                 >
                   Admin
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
