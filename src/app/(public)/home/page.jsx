@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import Link from "next/link";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // ─── GSAP Registration ───────────────────────────────────────────────────────
@@ -305,12 +306,12 @@ function Hero() {
             >
               <span>💧</span> Start Your Rental
             </RippleButton>
-            <a
+            <Link
               href="/plans"
               className="flex items-center gap-2 border-2 border-white/40 text-white font-bold px-8 py-4 rounded-2xl hover:bg-white/10 hover:border-white transition-all text-base"
             >
               View Plans <span>→</span>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -412,9 +413,9 @@ function ServicesPreview() {
               <p className="text-slate-500 text-sm leading-relaxed mb-4">{s.desc}</p>
               <div className="flex items-center justify-between">
                 <span className="font-bold text-[#1e3a8a] text-sm">{s.price}</span>
-                <a href="/contact" className="text-xs font-bold text-[#1e3a8a] opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                <Link href="/contact" className="text-xs font-bold text-[#1e3a8a] opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
                   Book Now →
-                </a>
+                </Link>
               </div>
               <div className="mt-4 h-0.5 rounded-full bg-gradient-to-r from-blue-200 to-[#1e3a8a] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
             </div>
@@ -423,12 +424,12 @@ function ServicesPreview() {
 
         {/* View All Services CTA */}
         <div className="text-center mt-12">
-          <a
+          <Link
             href="/services"
             className="inline-flex items-center gap-2 border-2 border-[#1e3a8a] text-[#1e3a8a] font-bold px-8 py-3.5 rounded-2xl hover:bg-[#1e3a8a] hover:text-white transition-all duration-300"
           >
             View All Services →
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -495,12 +496,12 @@ function HowItWorks() {
 
         {/* Learn More CTA */}
         <div className="text-center mt-12">
-          <a
+          <Link
             href="/how-it-works"
             className="inline-flex items-center gap-2 border-2 border-[#1e3a8a] text-[#1e3a8a] font-bold px-8 py-3.5 rounded-2xl hover:bg-[#1e3a8a] hover:text-white transition-all duration-300"
           >
             Learn More →
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -611,12 +612,12 @@ function PlansPreview() {
         </div>
 
         <div className="text-center mt-10">
-          <a
+          <Link
             href="/plans"
             className="inline-flex items-center gap-2 bg-white/10 border border-white/30 text-white font-bold px-8 py-3.5 rounded-2xl hover:bg-white/20 transition-all duration-300"
           >
             See Full Plan Details →
-          </a>
+          </Link>
         </div>
 
         <p className="text-center text-blue-300/60 text-sm mt-6">
@@ -739,12 +740,12 @@ function EnquiryForm() {
               <p className="text-slate-500 mb-6">
                 Thank you for contacting us.<br />Our team will get back to you soon.
               </p>
-              <a
+              <Link
                 href="https://wa.me/918179019929?text=Hi!%20I%20just%20submitted%20an%20enquiry."
                 className="inline-flex items-center gap-2 bg-green-500 text-white font-bold px-8 py-4 rounded-2xl hover:bg-green-600 transition-colors"
               >
                 <span>💬</span> Chat on WhatsApp
-              </a>
+              </Link>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-5">
@@ -850,12 +851,12 @@ function AboutBand() {
               </div>
             ))}
           </div>
-          <a
+          <Link
             href="/about"
             className="inline-flex items-center gap-2 border-2 border-[#1e3a8a] text-[#1e3a8a] font-bold px-8 py-3.5 rounded-2xl hover:bg-[#1e3a8a] hover:text-white transition-all duration-300"
           >
             Learn More About Us →
-          </a>
+          </Link>
         </div>
 
         <div className="about-right grid grid-cols-2 gap-4">
@@ -892,12 +893,12 @@ function PortalBanner() {
                 About MKL Enterprises: Vizag&apos;s trusted water purifier experts. Based at NAD Junction,
                 we combine expert knowledge with genuine care for every customer.
               </p>
-              <a
+              <Link
                 href="/about"
                 className="inline-flex items-center gap-2 bg-white text-[#1e3a8a] font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors text-sm"
               >
                 Learn More →
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -909,12 +910,12 @@ function PortalBanner() {
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 Facing an issue? Submit a complaint and get a unique tracking ID. We resolve within 24 hours.
               </p>
-              <a
+              <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-white text-slate-900 font-bold px-6 py-3 rounded-xl hover:bg-slate-100 transition-colors text-sm"
               >
                 Raise Complaint →
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -931,15 +932,15 @@ function ContactBand() {
         <h2 className="text-3xl font-black text-slate-900 mb-4">Still have questions?</h2>
         <p className="text-slate-500 mb-8">Reach us on any channel — we respond fast.</p>
         <div className="flex flex-wrap justify-center gap-4">
-          <a href="tel:8179019929" className="flex items-center gap-3 bg-[#1e3a8a] text-white font-bold px-6 py-3.5 rounded-2xl hover:bg-blue-800 transition-colors shadow-lg shadow-blue-900/20">
+          <Link href="tel:8179019929" className="flex items-center gap-3 bg-[#1e3a8a] text-white font-bold px-6 py-3.5 rounded-2xl hover:bg-blue-800 transition-colors shadow-lg shadow-blue-900/20">
             📞 Call Now
-          </a>
-          <a href="https://wa.me/918179019929" className="flex items-center gap-3 bg-green-500 text-white font-bold px-6 py-3.5 rounded-2xl hover:bg-green-600 transition-colors shadow-lg shadow-green-900/20">
+          </Link>
+          <Link href="https://wa.me/918179019929" className="flex items-center gap-3 bg-green-500 text-white font-bold px-6 py-3.5 rounded-2xl hover:bg-green-600 transition-colors shadow-lg shadow-green-900/20">
             💬 WhatsApp
-          </a>
-          <a href="mailto:mklenterprises1247@gmail.com" className="flex items-center gap-3 bg-white text-slate-800 border-2 border-slate-200 font-bold px-6 py-3.5 rounded-2xl hover:border-[#1e3a8a] transition-colors">
+          </Link>
+          <Link href="mailto:mklenterprises1247@gmail.com" className="flex items-center gap-3 bg-white text-slate-800 border-2 border-slate-200 font-bold px-6 py-3.5 rounded-2xl hover:border-[#1e3a8a] transition-colors">
             ✉️ Email Us
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -955,7 +956,7 @@ function WhatsAppFloat() {
   }, []);
 
   return (
-    <a
+    <Link
       href="https://wa.me/918179019929?text=Hi!%20I%20need%20water%20purifier%20service."
       target="_blank"
       rel="noreferrer"
@@ -967,7 +968,7 @@ function WhatsAppFloat() {
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
       </svg>
-    </a>
+    </Link>
   );
 }
 

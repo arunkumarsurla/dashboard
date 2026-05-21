@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+
+
 // ─── FOOTER ──────────────────────────────────────────────────────────────────
 export default function Footer() {
   const footerSections = [
@@ -76,19 +79,19 @@ export default function Footer() {
 
               {/* Contact Buttons */}
               <div className="flex flex-wrap gap-4">
-                <a
+                <Link
                   href="tel:8179019929"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold transition-all duration-300 shadow-lg shadow-blue-600/20 hover:scale-105"
                 >
                   Call Now
-                </a>
+                </Link>
 
-                <a
+                <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/10 hover:border-blue-500/40 bg-white/5 hover:bg-blue-500/10 text-slate-300 hover:text-white text-sm font-semibold transition-all duration-300"
                 >
                   Get Free Quote
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -103,12 +106,12 @@ export default function Footer() {
                 <ul className="space-y-4">
                   {section.links.map(([label, href]) => (
                     <li key={label}>
-                      <a
+                      <Link
                         href={href}
                         className="text-slate-400 hover:text-blue-400 text-sm transition-all duration-300 hover:translate-x-1 inline-flex"
                       >
                         {label}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -126,26 +129,26 @@ export default function Footer() {
               </p>
 
               <div className="flex items-center gap-6 text-sm">
-                <a
+                <Link
                   href="/privacy-policy"
                   className="text-slate-500 hover:text-slate-300 transition-colors"
                 >
                   Privacy Policy
-                </a>
+                </Link>
 
-                <a
+                <Link
                   href="/terms"
                   className="text-slate-500 hover:text-slate-300 transition-colors"
                 >
                   Terms &amp; Conditions
-                </a>
+                </Link>
 
-                <a
+                <Link
                   href="/admin"
                   className="text-slate-500 hover:text-blue-400 transition-colors"
                 >
                   Admin
-                </a>
+                </Link>
               </div>
             </div>
           </div>
