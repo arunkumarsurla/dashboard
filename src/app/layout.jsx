@@ -1,5 +1,7 @@
 import "./globals.css";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   metadataBase: new URL("https://mklenterprises.in"),
@@ -140,7 +142,11 @@ export default function RootLayout({ children }) {
       </head>
 
       <body suppressHydrationWarning>
-        <ReactQueryProvider>{children}</ReactQueryProvider>
+        <ReactQueryProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ReactQueryProvider>
       </body>
     </html>
   );

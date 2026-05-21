@@ -37,94 +37,6 @@ function RippleButton({ children, className = "", href }) {
   );
 }
 
-function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const navRef = useRef(null);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  useEffect(() => {
-    if (!navRef.current) return;
-    gsap.fromTo(navRef.current, { y: -80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.2 });
-  }, []);
-  const navLinks = [
-    { label: "Home", href: "/" }, { label: "About", href: "/about" }, { label: "Services", href: "/services" },
-    { label: "Brands", href: "/brands" }, { label: "Plans", href: "/plans" }, { label: "FAQs", href: "/faqs" }, { label: "Contact", href: "/contact" },
-  ];
-  return (
-    <nav ref={navRef} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-white/95 backdrop-blur-xl shadow-lg shadow-blue-900/8 border-b border-blue-100" : "bg-transparent"}`}>
-      <div className="bg-[#1e3a8a] text-white text-xs py-2 px-6 flex justify-between items-center">
-        <span className="opacity-80">🎉 Free Installation across Visakhapatnam & surrounding areas</span>
-        <div className="flex items-center gap-4 opacity-90">
-          <a href="tel:8179019929" className="hover:opacity-100">📞 +91 81790 19929</a>
-          <span>|</span>
-          <a href="https://wa.me/918179019929" className="hover:opacity-100">💬 WhatsApp</a>
-        </div>
-      </div>
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10">
-            <div className="absolute inset-0 bg-[#1e3a8a] rounded-xl rotate-6 group-hover:rotate-12 transition-transform duration-300" />
-            <div className="absolute inset-0 bg-blue-400 rounded-xl flex items-center justify-center"><span className="text-white font-black text-sm">MKL</span></div>
-          </div>
-          <div>
-            <div className={`font-black text-lg leading-none tracking-tight transition-colors ${scrolled ? "text-[#1e3a8a]" : "text-white"}`}>MKL Enterprises</div>
-            <div className={`text-xs font-medium tracking-widest uppercase transition-colors ${scrolled ? "text-blue-400" : "text-blue-200"}`}>Rentals, Sales & Service</div>
-          </div>
-        </a>
-        <div className="hidden md:flex items-center gap-1">
-          {navLinks.map(link => <a key={link.label} href={link.href} className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 hover:bg-blue-50 hover:text-[#1e3a8a] ${scrolled ? "text-slate-700" : "text-white/90 hover:text-[#1e3a8a]"}`}>{link.label}</a>)}
-        </div>
-        <div className="hidden md:flex">
-          <RippleButton href="/contact" className="bg-[#1e3a8a] text-white text-sm font-bold px-6 py-2.5 rounded-xl hover:bg-blue-800 transition-colors shadow-lg shadow-blue-900/30">Book Now</RippleButton>
-        </div>
-        <button className="md:hidden flex flex-col gap-1.5 p-2" onClick={() => setMenuOpen(!menuOpen)}>
-          <span className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""} ${scrolled ? "bg-slate-800" : "bg-white"}`} />
-          <span className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "opacity-0" : ""} ${scrolled ? "bg-slate-800" : "bg-white"}`} />
-          <span className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""} ${scrolled ? "bg-slate-800" : "bg-white"}`} />
-        </button>
-      </div>
-      <div className={`md:hidden bg-white border-t border-blue-100 overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-96" : "max-h-0"}`}>
-        <div className="px-6 py-4 flex flex-col gap-2">
-          {navLinks.map(l => <a key={l.label} href={l.href} onClick={() => setMenuOpen(false)} className="text-slate-700 font-semibold py-2.5 border-b border-slate-100 hover:text-[#1e3a8a]">{l.label}</a>)}
-        </div>
-      </div>
-    </nav>
-  );
-}
-
-function Footer() {
-  return (
-    <footer style={{ background: "#0a1628" }}>
-      <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
-        <div className="md:col-span-1">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-9 h-9 bg-[#1e3a8a] rounded-xl flex items-center justify-center"><span className="text-white font-black text-xs">MKL</span></div>
-            <span className="text-white font-black text-base">MKL Enterprises</span>
-          </div>
-          <p className="text-slate-400 text-sm leading-relaxed mb-4">Visakhapatnam's #1 water purifier rental, sales & service experts.</p>
-          <a href="tel:8179019929" className="text-blue-400 font-bold text-sm hover:text-blue-300">+91 81790 19929</a>
-        </div>
-        {[
-          { title: "Pages", links: [["Home", "/"], ["About Us", "/about"], ["Services", "/services"], ["Contact", "/contact"]] },
-          { title: "Rentals", links: [["3-Month Plan", "/plans"], ["6-Month Plan", "/plans"], ["12-Month Plan", "/plans"], ["All Brands", "/brands"]] },
-          { title: "Support", links: [["FAQs", "/faqs"], ["How It Works", "/how-it-works"], ["Why Choose Us", "/why-choose-us"], ["Raise Complaint", "/complaint"]] },
-        ].map((col, i) => (
-          <div key={i}>
-            <h4 className="text-white font-bold text-sm mb-4 tracking-wider">{col.title}</h4>
-            <ul className="space-y-2">{col.links.map(([label, href]) => <li key={label}><a href={href} className="text-slate-400 text-sm hover:text-blue-400 transition-colors font-medium">{label}</a></li>)}</ul>
-          </div>
-        ))}
-      </div>
-      <div className="border-t border-white/5 py-6">
-        <div className="max-w-7xl mx-auto px-6 text-xs text-slate-600">© 2026 MKL Enterprises. All rights reserved. · NAD Junction, Visakhapatnam AP 530027</div>
-      </div>
-    </footer>
-  );
-}
 
 // ── HOW IT WORKS DATA ─────────────────────────────────────────────────────────
 const RENTAL_STEPS = [
@@ -170,7 +82,6 @@ export default function HowItWorksPage() {
   return (
     <>
       <style>{`@keyframes ripple{from{transform:scale(0);opacity:1}to{transform:scale(4);opacity:0}}html{scroll-behavior:smooth}`}</style>
-      <Navbar />
 
       {/* ── Hero ── */}
       <section ref={heroRef} className="relative pt-36 pb-20 overflow-hidden" style={{ background: "linear-gradient(135deg,#0a1628 0%,#1e3a8a 55%,#1e4db7 100%)" }}>
@@ -191,14 +102,14 @@ export default function HowItWorksPage() {
       </section>
 
       {/* ── Tab Toggle ── */}
-      <section className="bg-[#f1f5f9] pt-16 pb-4">
+      {/* <section className="bg-[#f1f5f9] pt-16 pb-4">
         <div className="max-w-xs mx-auto px-6">
           <div className="flex bg-white rounded-2xl p-1.5 border border-blue-100 shadow-sm">
             <button onClick={() => setActiveTab("rental")} className={`flex-1 py-2.5 rounded-xl font-bold text-sm transition-all ${activeTab === "rental" ? "bg-[#1e3a8a] text-white shadow-lg shadow-blue-900/30" : "text-slate-500 hover:text-[#1e3a8a]"}`}>Renting a Purifier</button>
             <button onClick={() => setActiveTab("service")} className={`flex-1 py-2.5 rounded-xl font-bold text-sm transition-all ${activeTab === "service" ? "bg-[#1e3a8a] text-white shadow-lg shadow-blue-900/30" : "text-slate-500 hover:text-[#1e3a8a]"}`}>Booking a Service</button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── Steps ── */}
       <section ref={ref} className="py-20 bg-[#f1f5f9]">
@@ -287,7 +198,7 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <Footer />
+      
       <a href="https://wa.me/918179019929?text=Hi!%20I%20need%20water%20purifier%20service." target="_blank" rel="noreferrer" className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-2xl shadow-green-500/40 hover:bg-green-400 hover:scale-110 transition-all duration-300">
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>
       </a>

@@ -79,209 +79,9 @@ function RippleButton({ children, className = "", href }) {
   );
 }
 
-function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const navRef = useRef(null);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  useEffect(() => {
-    if (!navRef.current) return;
-    gsap.fromTo(
-      navRef.current,
-      { y: -80, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.2 },
-    );
-  }, []);
-  const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Brands", href: "/brands" },
-    { label: "Plans", href: "/plans" },
-    { label: "FAQs", href: "/faqs" },
-    { label: "Contact", href: "/contact" },
-  ];
-  return (
-    <nav
-      ref={navRef}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-white/95 backdrop-blur-xl shadow-lg shadow-blue-900/8 border-b border-blue-100" : "bg-transparent"}`}
-    >
-      <div className="bg-[#1e3a8a] text-white text-xs py-2 px-6 flex justify-between items-center">
-        <span className="opacity-80">
-          🎉 Free Installation across Visakhapatnam & surrounding areas
-        </span>
-        <div className="flex items-center gap-4 opacity-90">
-          <a href="tel:8179019929" className="hover:opacity-100">
-            📞 +91 81790 19929
-          </a>
-          <span>|</span>
-          <a href="https://wa.me/918179019929" className="hover:opacity-100">
-            💬 WhatsApp
-          </a>
-        </div>
-      </div>
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10">
-            <div className="absolute inset-0 bg-[#1e3a8a] rounded-xl rotate-6 group-hover:rotate-12 transition-transform duration-300" />
-            <div className="absolute inset-0 bg-blue-400 rounded-xl flex items-center justify-center">
-              <span className="text-white font-black text-sm">MKL</span>
-            </div>
-          </div>
-          <div>
-            <div
-              className={`font-black text-lg leading-none tracking-tight transition-colors ${scrolled ? "text-[#1e3a8a]" : "text-white"}`}
-            >
-              MKL Enterprises
-            </div>
-            <div
-              className={`text-xs font-medium tracking-widest uppercase transition-colors ${scrolled ? "text-blue-400" : "text-blue-200"}`}
-            >
-              Premium Rentals
-            </div>
-          </div>
-        </a>
-        <div className="hidden md:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 hover:bg-blue-50 hover:text-[#1e3a8a] ${scrolled ? "text-slate-700" : "text-white/90 hover:text-[#1e3a8a]"}`}
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-        <div className="hidden md:flex items-center gap-3">
-          <RippleButton
-            href="/contact"
-            className="bg-[#1e3a8a] text-white text-sm font-bold px-6 py-2.5 rounded-xl hover:bg-blue-800 transition-colors shadow-lg shadow-blue-900/30"
-          >
-            Book Now
-          </RippleButton>
-        </div>
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <span
-            className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""} ${scrolled ? "bg-slate-800" : "bg-white"}`}
-          />
-          <span
-            className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "opacity-0" : ""} ${scrolled ? "bg-slate-800" : "bg-white"}`}
-          />
-          <span
-            className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""} ${scrolled ? "bg-slate-800" : "bg-white"}`}
-          />
-        </button>
-      </div>
-      <div
-        className={`md:hidden bg-white border-t border-blue-100 overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-96" : "max-h-0"}`}
-      >
-        <div className="px-6 py-4 flex flex-col gap-2">
-          {navLinks.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-slate-700 font-semibold py-2.5 border-b border-slate-100 hover:text-[#1e3a8a]"
-            >
-              {l.label}
-            </a>
-          ))}
-        </div>
-      </div>
-    </nav>
-  );
-}
 
-function Footer() {
-  return (
-    <footer style={{ background: "#0a1628" }}>
-      <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
-        <div className="md:col-span-1">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-9 h-9 bg-[#1e3a8a] rounded-xl flex items-center justify-center">
-              <span className="text-white font-black text-xs">MKL</span>
-            </div>
-            <span className="text-white font-black text-base">
-              MKL Enterprises
-            </span>
-          </div>
-          <p className="text-slate-400 text-sm leading-relaxed mb-4">
-            Visakhapatnam's #1 water purifier rental service with sales and
-            maintenance support.
-          </p>
-          <a
-            href="tel:8179019929"
-            className="text-blue-400 font-bold text-sm hover:text-blue-300"
-          >
-            +91 81790 19929
-          </a>
-        </div>
-        {[
-          {
-            title: "Pages",
-            links: [
-              ["Home", "/"],
-              ["About Us", "/about"],
-              ["Services", "/services"],
-              ["Contact", "/contact"],
-            ],
-          },
-          {
-            title: "Rentals",
-            links: [
-              ["3-Month Plan", "/plans"],
-              ["6-Month Plan", "/plans"],
-              ["12-Month Plan", "/plans"],
-              ["All Brands", "/brands"],
-            ],
-          },
-          {
-            title: "Support",
-            links: [
-              ["FAQs", "/faqs"],
-              ["How It Works", "/how-it-works"],
-              ["Why Choose Us", "/why-choose-us"],
-              ["Raise Complaint", "/complaint"],
-            ],
-          },
-        ].map((col, i) => (
-          <div key={i}>
-            <h4 className="text-white font-bold text-sm mb-4 tracking-wider">
-              {col.title}
-            </h4>
-            <ul className="space-y-2">
-              {col.links.map(([label, href]) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    className="text-slate-400 text-sm hover:text-blue-400 transition-colors font-medium"
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-      <div className="border-t border-white/5 py-6">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-slate-600">
-          <span>
-            © 2026 MKL Enterprises. All rights reserved. · NAD Junction,
-            Visakhapatnam AP 530027
-          </span>
-        </div>
-      </div>
-    </footer>
-  );
-}
+
+
 
 // ── FAQ DATA ─────────────────────────────────────────────────────────────────
 const FAQ_CATEGORIES = [
@@ -509,7 +309,6 @@ export default function FAQsPage() {
   return (
     <>
       <style>{`@keyframes ripple { from{transform:scale(0);opacity:1} to{transform:scale(4);opacity:0} } html{scroll-behavior:smooth}`}</style>
-      <Navbar />
 
       {/* ── Hero ── */}
       <section
@@ -561,7 +360,7 @@ export default function FAQsPage() {
           </h1>
           <p className="faq-hero-sub text-lg text-blue-200 mb-10">
             Everything you need to know about renting a water purifier from MKL.
-            Can't find your answer? WhatsApp us.
+            Can&apos;t find your answer? WhatsApp us.
           </p>
 
           {/* Search */}
@@ -587,8 +386,8 @@ export default function FAQsPage() {
             /* Search results */
             <div>
               <p className="text-slate-500 text-sm mb-8 font-semibold">
-                {filtered.length} result{filtered.length !== 1 ? "s" : ""} for "
-                <span className="text-[#1e3a8a]">{search}</span>"
+                {filtered.length} result{filtered.length !== 1 ? "s" : ""} for &quot;
+                <span className="text-[#1e3a8a]">{search}</span>&quot;
               </p>
               {filtered.length === 0 ? (
                 <div className="text-center py-20">
@@ -747,7 +546,6 @@ export default function FAQsPage() {
         </div>
       </section>
 
-      <Footer />
       <a
         href="https://wa.me/918179019929?text=Hi!%20I%20need%20water%20purifier%20service."
         target="_blank"
