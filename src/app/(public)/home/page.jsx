@@ -144,7 +144,7 @@ function WaterBlob({ className = "", color = "#1e3a8a", opacity = 0.08, size = 6
     if (!animate || !blobRef.current) return;
     gsap.to(blobRef.current, {
       attr: { d: "M60,0 C93,0 120,27 120,60 C120,93 100,115 60,120 C20,125 0,93 0,60 C0,27 27,0 60,0 Z" },
-      duration: 4,
+      duration: 2,           // reduced from 4
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut",
@@ -202,24 +202,24 @@ function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 0.5 });
-      tl.fromTo(".hero-eyebrow", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" })
-        .fromTo(".hero-title",   { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" }, "-=0.4")
-        .fromTo(".hero-sub",     { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, "-=0.4")
-        .fromTo(".hero-ctas",    { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, "-=0.3")
-        .fromTo(".hero-stat",    { y: 20, opacity: 0, scale: 0.9 }, { y: 0, opacity: 1, scale: 1, duration: 0.5, stagger: 0.1, ease: "back.out(1.4)" }, "-=0.2");
+      const tl = gsap.timeline({ delay: 0.1 });        // reduced from 0.5
+      tl.fromTo(".hero-eyebrow", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" })   // y: 30→20, dur: 0.7→0.35
+        .fromTo(".hero-title",   { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, "-=0.2")  // y: 50→30, dur: 0.9→0.45
+        .fromTo(".hero-sub",     { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, "-=0.2")  // y: 30→20, dur: 0.7→0.35
+        .fromTo(".hero-ctas",    { y: 15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3,  ease: "power3.out" }, "-=0.15") // y: 20→15, dur: 0.6→0.3
+        .fromTo(".hero-stat",    { y: 15, opacity: 0, scale: 0.95 }, { y: 0, opacity: 1, scale: 1, duration: 0.25, stagger: 0.06, ease: "back.out(1.4)" }, "-=0.1"); // reduced all
 
-      gsap.to(".blob-1", { y: -30, x: 15,  duration: 6, repeat: -1, yoyo: true, ease: "sine.inOut" });
-      gsap.to(".blob-2", { y: 25,  x: -20, duration: 8, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1 });
-      gsap.to(".blob-3", { y: -20, x: 10,  duration: 7, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 2 });
+      gsap.to(".blob-1", { y: -20, x: 10,  duration: 3,  repeat: -1, yoyo: true, ease: "sine.inOut" });             // y: -30→-20, x: 15→10,  dur: 6→3
+      gsap.to(".blob-2", { y: 15,  x: -12, duration: 4,  repeat: -1, yoyo: true, ease: "sine.inOut", delay: 0.5 }); // y: 25→15,  x: -20→-12, dur: 8→4, delay: 1→0.5
+      gsap.to(".blob-3", { y: -12, x: 6,   duration: 3.5,repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1 });   // y: -20→-12, x: 10→6,   dur: 7→3.5, delay: 2→1
 
       document.querySelectorAll(".drop").forEach((drop, i) => {
         gsap.to(drop, {
           y: "120vh",
           opacity: 0,
-          duration: gsap.utils.random(3, 7),
+          duration: gsap.utils.random(1.5, 3.5),       // reduced from 3–7
           repeat: -1,
-          delay: i * 0.4,
+          delay: i * 0.2,                               // reduced from 0.4
           ease: "power1.in",
           onRepeat: () => { gsap.set(drop, { y: -20, opacity: gsap.utils.random(0.3, 0.8) }); },
         });
@@ -340,7 +340,7 @@ function BrandsMarquee() {
   const trackRef = useRef(null);
   useEffect(() => {
     if (!trackRef.current) return;
-    gsap.to(trackRef.current, { x: "-50%", duration: 20, repeat: -1, ease: "none" });
+    gsap.to(trackRef.current, { x: "-50%", duration: 12, repeat: -1, ease: "none" }); // reduced from 20
   }, []);
 
   const doubled = [...BRANDS, ...BRANDS];
@@ -375,9 +375,9 @@ function ServicesPreview() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".service-card",
-        { y: 60, opacity: 0 },
+        { y: 40, opacity: 0 },                         // y: 60→40
         {
-          y: 0, opacity: 1, duration: 0.7, stagger: 0.12, ease: "power3.out",
+          y: 0, opacity: 1, duration: 0.4, stagger: 0.07, ease: "power3.out",   // dur: 0.7→0.4, stagger: 0.12→0.07
           scrollTrigger: { trigger: ".services-grid", start: "top 80%", once: true },
         },
       );
@@ -450,9 +450,9 @@ function HowItWorks() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".how-step",
-        { x: -50, opacity: 0 },
+        { x: -30, opacity: 0 },                        // x: -50→-30
         {
-          x: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: "power3.out",
+          x: 0, opacity: 1, duration: 0.35, stagger: 0.08, ease: "power3.out",  // dur: 0.6→0.35, stagger: 0.15→0.08
           scrollTrigger: { trigger: ref.current, start: "top 75%", once: true },
         },
       );
@@ -515,9 +515,9 @@ function PlansPreview() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".plan-card",
-        { y: 80, opacity: 0 },
+        { y: 50, opacity: 0 },                         // y: 80→50
         {
-          y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "back.out(1.2)",
+          y: 0, opacity: 1, duration: 0.45, stagger: 0.1, ease: "back.out(1.2)",  // dur: 0.8→0.45, stagger: 0.15→0.1
           scrollTrigger: { trigger: ref.current, start: "top 75%", once: true },
         },
       );
@@ -635,9 +635,9 @@ function Testimonials() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".testi-card",
-        { y: 60, opacity: 0 },
+        { y: 40, opacity: 0 },                         // y: 60→40
         {
-          y: 0, opacity: 1, duration: 0.7, stagger: 0.2, ease: "power3.out",
+          y: 0, opacity: 1, duration: 0.4, stagger: 0.1, ease: "power3.out",    // dur: 0.7→0.4, stagger: 0.2→0.1
           scrollTrigger: { trigger: ref.current, start: "top 80%", once: true },
         },
       );
@@ -693,9 +693,9 @@ function EnquiryForm() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".form-inner",
-        { y: 60, opacity: 0 },
+        { y: 40, opacity: 0 },                         // y: 60→40
         {
-          y: 0, opacity: 1, duration: 0.8, ease: "power3.out",
+          y: 0, opacity: 1, duration: 0.45, ease: "power3.out",                  // dur: 0.8→0.45
           scrollTrigger: { trigger: ref.current, start: "top 75%", once: true },
         },
       );
@@ -815,9 +815,9 @@ function AboutBand() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         [".about-left", ".about-right"],
-        { y: 60, opacity: 0 },
+        { y: 40, opacity: 0 },                         // y: 60→40
         {
-          y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out",
+          y: 0, opacity: 1, duration: 0.45, stagger: 0.12, ease: "power3.out",  // dur: 0.8→0.45, stagger: 0.2→0.12
           scrollTrigger: { trigger: ref.current, start: "top 75%", once: true },
         },
       );
